@@ -1,0 +1,1657 @@
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+div,
+ul,
+li,
+ol,
+dl,
+dt,
+dd,
+span,
+i,
+em,
+strong,
+button,
+table,
+textarea,
+input,
+b,
+nav,
+footer,
+form,
+frame,
+img {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    box-sizing: border-box;
+    border: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    outline: none;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    font-style: normal;
+}
+
+html {
+    font-size: 13.333vw;
+}
+
+a:link,
+a:hover,
+a:visited {
+    text-decoration: none;
+}
+
+@media screen and (min-width:415px) and (max-width:639px) {
+
+    html,
+    body {
+        font-size: 54px;
+    }
+}
+
+@media screen and (min-width:640px) and (max-width:719px) {
+
+    html,
+    body {
+        font-size: 64px;
+    }
+}
+
+@media screen and (min-width:750px) {
+
+    html,
+    body {
+        font-size: 72px;
+        max-width: 750px;
+        margin: 0 auto;
+    }
+
+    .NewOrderNav,
+    .NewOrdBjImg {
+        left: calc(50% - 375px) !important;
+    }
+}
+
+/*全局样式*/
+
+/*头部*/
+.NewOrderNav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+    max-width: 750px;
+}
+
+.NewNav {
+    width: 100%;
+    height: 0.9rem;
+    line-height: 0.9rem;
+    text-align: center;
+    font-size: 0.36rem;
+    color: #fff;
+    background: #397879;
+    letter-spacing: 0.02rem;
+    position: relative;
+}
+
+.NewNav span {
+    width: 0.2rem;
+    height: 0.35rem;
+    background: url(http://cdn.names.org.cn/website/Content/szname/img/NewNav.png) no-repeat;
+    background-size: 100%;
+    display: inline-block;
+    position: absolute;
+    top: calc(50% - 0.175rem);
+    left: 0.24rem;
+}
+
+.NewOrder {
+    width: 100%;
+    overflow: hidden;
+    margin-top: 0.89rem;
+    text-align: center;
+}
+
+.Neworder_tit {
+    width: 100%;
+    height: 0.89rem;
+    border-bottom: 1px solid #aaaaaa;
+    background: #f8f8f8;
+    padding: 0.17rem 0 0.13rem;
+}
+
+.Neworder_tit li {
+    font-size: 0.28rem;
+    float: left;
+    width: 25%;
+    height: 100%;
+    text-align: center;
+    line-height: 0.6rem;
+}
+
+.Neworder_tit_bj {
+    background: url(http://cdn.names.org.cn/website/Content/szname/img/Neworder_tit_libj.png) no-repeat;
+    background-size: 100% 100%;
+    color: #fff;
+}
+
+.Neworder_box {
+    width: 100%;
+    overflow: hidden;
+    display: none;
+}
+
+.NewNav_p {
+    width: 100%;
+    text-align: center;
+    font-size: 0.3rem;
+    line-height: 0.5rem;
+    background: #fff;
+    color: #b62220;
+    display: none;
+}
+
+.NewOrdCon {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    padding: 0 0.24rem;
+}
+
+.NewOrdBjImg {
+    width: 100%;
+    max-width: 750px;
+    height: 2rem;
+    /* background: url(http://cdn.names.org.cn/website/Content/szname/img/NewOrderBj.png) no-repeat; */
+    position: absolute;
+    top: 0.89rem;
+    right: 0;
+    /* background-size: 100%; */
+    /* opacity: 0.5; */
+    /* background-color: #397879; */
+}
+
+.OrderCon_Ul {
+    width: 100%;
+    overflow: hidden;
+    text-align: center;
+    background: #fff;
+    border-radius: 5px;
+    margin-bottom: 0.5rem;
+}
+
+.OrdCon_Name {
+    overflow: hidden;
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    width: auto;
+    color: #397879;
+}
+
+.OrdCon_Name li {
+    width: 1rem;
+    height: 2.5rem;
+    margin-right: .5rem;
+    padding-top: 0.5rem;
+    float: left;
+}
+
+.OrdCon_Name li p {
+    font-size: 0.32rem;
+    color: #397879;
+    line-height: .5rem;
+    text-align: center;
+    width: 100%;
+}
+
+.OrdCon_Name li span {
+    width: 1rem;
+    height: 1rem;
+    background: url('../img/field.png') no-repeat;
+    background-size: 100%;
+    font-size: 0.6rem;
+    text-align: center;
+    line-height: 1rem;
+    display: block;
+    margin: 0 auto;
+}
+.spell-font{
+    display: flex;
+    flex-direction: column;
+    width: 1rem;
+    align-items: center;
+    color: #397879;
+}
+.font_last_name{
+    width: 1rem;
+    height: 1rem;
+    background: url('../img/field.png') no-repeat;
+    background-size: 100%;
+    font-size: 0.6rem;
+    text-align: center;
+    line-height: 1rem;
+    display: block;
+}
+.OrdCon_Name li i {
+    width: 100%;
+    line-height: 0.44rem;
+    text-align: center;
+    font-size: 0.24rem;
+    color: #c33936;
+    display: block;
+}
+
+.OrdCon_Name li:last-child {
+    margin-right: 0;
+}
+
+/*OrdName_Htow*/
+.OrdName_Htow {
+    width: 100%;
+    height: auto;
+    font-size: 0.36rem;
+    color: #383838;
+    text-align: center;
+    font-weight: normal;
+    margin-bottom: 0.2rem;
+}
+
+.OrdName_Hsan {
+    width: 100%;
+    height: 0.66rem;
+    position: relative;
+    margin: .2rem 0;
+}
+
+.OrdName_Hsan span {
+    width: 2.59rem;
+    height: 100%;
+    background: url(http://cdn.names.org.cn/website/Content/szname/img/OrdName_Hsan.png) no-repeat;
+    background-size: 100%;
+    position: absolute;
+    top: 0;
+    left: calc(50% - 1.295rem);
+}
+
+.OrdName_Color {
+    color: #b62220;
+}
+
+.Ordername_ul {
+    font-size: 0.32rem;
+    color: #383838;
+    text-align: left;
+    padding-bottom: 0.21rem;
+    border-bottom: 1px solid #eee;
+}
+
+.Ordername_ul li {
+    line-height: 0.52rem;
+}
+
+.Ordername_ul_txt {
+    font-size: 0.34rem;
+}
+
+.Ordername_ul_txt span {
+    font-size: 0.31rem;
+}
+
+/*Ordername_ulCon*/
+.Ordername_ulCon {
+    width: 100%;
+    overflow: hidden;
+    text-align: left;
+    /* padding: 0.15rem 0; */
+    /* border-bottom: 1px solid #eee; */
+}
+
+.OrderCon_Ul ul:last-child {
+    border-bottom: 0 !important;
+}
+
+.Ordername_ulCon li {
+    font-size: 0.32rem;
+    line-height: 0.56rem;
+    /* background: #FFF; */
+    /* border-radius: 5px; */
+    padding: 0.1rem 0.2rem;
+    display: flex;
+}
+
+.Ordername_ul_tit {
+    font-size: 0.36rem !important;
+    line-height: .5rem !important;
+}
+.five_element {
+    width: 4rem;
+    flex-wrap: wrap;
+    margin-left: 1rem;
+    margin-top: 0.5rem;
+    display: flex;
+    font-size: 0.28rem;
+}
+.five_element .five_element_child{
+    width: 1.8rem;
+}
+.five_element_child span:nth-child(2){
+    color: #397879;
+}
+.Ordername_ul_tit i {
+    display: inline-block;
+    width: 1.32rem;
+    height: 0.48rem;
+    background-size: 100%;
+    padding-left: 0.4rem;
+    color: #fff;
+}
+
+.ordername_dian {
+    width: 0.12rem;
+    height: 0.12rem;
+    border-radius: 50%;
+    background: #000000;
+    display: inline-block;
+    position: absolute;
+    top: calc(50% - 0.06rem);
+    left: 0;
+}
+
+.Ordname_padding {
+    padding-left: 0.3rem;
+    position: relative;
+}
+
+.Ordername_An {
+    width: 100%;
+    height: 0.64rem;
+    margin: 0.6rem 0 2rem;
+}
+
+.Ordername_but,
+.Ordername_but_re {
+    width: 2.49rem;
+    height: 100%;
+    background: #c33936;
+    border-radius: 50px;
+    color: #fff;
+    font-size: 0.32rem;
+    display: block;
+    margin: 0 auto;
+}
+
+/*OrderNameCon_dl*/
+.OrderNameCon_dl {
+    width: 100%;
+    overflow: hidden;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+    padding: 0.2rem 0;
+}
+
+.OrderNameCon_dl dt {
+    font-size: 0.34rem;
+    font-weight: bold;
+    height: auto
+}
+
+.OrderNameCon_dl dd {
+    font-size: 0.3rem;
+    line-height: 0.5rem;
+    text-indent: 2em;
+}
+
+.ordNcon_dl_tit {
+    font-size: 0.34rem !important;
+    height: .6rem !important;
+    margin-top: .4rem;
+}
+
+/*OrderSx_ul*/
+.OrderSx_ul {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.OrderSx_ul .Ordername_ul {
+    min-height: 2.3rem;
+}
+
+.ordSx_dl_tit {
+    line-height: 0.45rem;
+    height: 0.45rem;
+    font-size: 0.34rem;
+    font-weight: bold;
+}
+
+.OrderSx_zodiac {
+    width: 2.78rem;
+    height: 2.22rem;
+    overflow: hidden;
+    position: absolute;
+    bottom: 0.1rem;
+    right: 0.28rem;
+}
+
+.OrderSx_zodiac img {
+    width: 100%;
+    height: 100%;
+}
+
+.OrderSx_Con {
+    width: 100%;
+    overflow: hidden;
+}
+
+.OrderSx_Con h3 {
+    font-weight: bold;
+    font-size: 0.34rem;
+    text-align: left;
+    line-height: 0.76rem;
+}
+
+.OrderSx_Con p {
+    font-size: 0.3rem;
+    text-align: left;
+    line-height: .5rem;
+}
+
+.OrdLnian {
+    width: 100%;
+    font-size: 0.3rem;
+    text-align: left;
+}
+
+.OrdLnian h3 {
+    font-size: 0.34rem;
+    line-height: 0.78rem;
+}
+
+.OrdLnian p {
+    line-height: 0.48rem;
+}
+
+.OrdLnian a {
+    display: inline-block;
+    margin-top: 0.66rem;
+    font-size: 0.3rem;
+    text-decoration: underline;
+}
+
+.newdeta {
+    width: 100%;
+    font-size: .3rem;
+    overflow: hidden;
+    padding: 0.2rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+.newdetailed {
+    width: 100%;
+    background: #c09d65;
+}
+
+.newdetailed tr td {
+    width: 20%;
+    background: #fff;
+    text-align: center;
+    padding: 0.1rem 0;
+}
+
+.newdetailed tr:first-child td {
+    background: #faead1;
+    color: #c43535;
+}
+
+.newdetailed tr:nth-child(2) td,
+.newdetailed tr:nth-child(4) td,
+.newdetailed tr:nth-child(6) td {
+    background: #fff8ee;
+}
+
+.newdetailed tr:nth-child(3) td,
+.newdetailed tr:nth-child(5) td,
+.newdetailed tr:nth-child(7) td {
+    background: #FFF;
+}
+
+.newdetailed tr td:first-child {
+    background: #faead1;
+    color: #c43535;
+}
+
+.Statistics {
+    /*padding:0.2rem;*/
+    padding-top: 0.2rem;
+}
+
+.Statistics_bj {
+    width: 100%;
+    overflow: hidden;
+}
+
+.wxStatistics {
+    width: 100%;
+    overflow: hidden;
+    margin-top: 0.1rem;
+    padding-bottom: 0.1rem;
+}
+
+.Statistics_P {
+    width: 100%;
+    font-size: 0.32rem;
+    line-height: 0.6rem;
+    text-align: left;
+}
+
+.wxStatistics li {
+    height: .5rem;
+    font-size: 0.26rem;
+    line-height: 0.5rem;
+    width: 100%;
+    margin-bottom: 0.08rem;
+}
+
+.wxStatistics li span {
+    width: .5rem;
+    height: .5rem;
+    background: #f6c700;
+    border-radius: 50%;
+    text-align: center;
+    float: left;
+    margin-right: 0.22rem;
+    -webkit-box-shadow: 1px -2px 1px 1px rgba(0, 0, 0, 0.2) inset;
+    -moz-box-shadow: 1px -2px 1px 1px rgba(0, 0, 0, 0.2) inset;
+    -ms-box-shadow: 1px -2px 1px 1px rgba(0, 0, 0, 0.2) inset;
+    box-shadow: 1px -2px 1px 1px rgba(0, 0, 0, 0.2) inset;
+}
+
+.wxStatistics li .wxStatistics_tu {
+    width: 68%;
+    height: 0.28rem;
+    display: block;
+    float: left;
+    background: #e5e5e5;
+    margin: 0.14rem 0.15rem 0 0;
+    border-radius: 20px;
+}
+
+.wxStatistics_tu_bj {
+    height: 100%;
+    border-radius: 20px;
+    background: #f6c700;
+    box-shadow: 1px -0.8px 1px 1px rgba(0, 0, 0, 0.2) inset;
+    float: left;
+    position: relative;
+}
+
+.wxStatistics_tu_bj em {
+    width: 0.65rem;
+    height: 0.32rem;
+    background: url(http://cdn.names.org.cn/website/Content/szname/img/wxStatistics_tu_bj_01.png) no-repeat;
+    background-size: 100%;
+    display: inline-block;
+    position: absolute;
+    top: -0.03rem;
+    right: -0.25rem;
+}
+
+.wxStatistics li i {
+    color: #c0222d;
+    float: right;
+}
+
+.wxStatistics li:nth-child(2) span {
+    background: #80c269;
+}
+
+.wxStatistics li:nth-child(2) .wxStatistics_tu_bj {
+    background: #80c269;
+}
+
+.wxStatistics li:nth-child(2) .wxStatistics_tu_bj em {
+    width: 0.33rem;
+    height: 0.4rem;
+    background: url(http://cdn.names.org.cn/website/Content/szname/img/wxStatistics_tu_bj_02.png) no-repeat;
+    background-size: 100%;
+    display: inline-block;
+    position: absolute;
+    top: -0.08rem;
+    right: 0rem;
+}
+
+.wxStatistics li:nth-child(3) span {
+    background: #7ecef4;
+}
+
+.wxStatistics li:nth-child(3) .wxStatistics_tu_bj {
+    background: #7ecef4;
+}
+
+.wxStatistics li:nth-child(3) .wxStatistics_tu_bj em {
+    width: 0.33rem;
+    height: 0.43rem;
+    background: url(http://cdn.names.org.cn/website/Content/szname/img/wxStatistics_tu_bj_03.png) no-repeat;
+    background-size: 100%;
+    display: inline-block;
+    position: absolute;
+    top: -0.08rem;
+    right: -0.05rem;
+}
+
+.wxStatistics li:nth-child(4) span {
+    background: #ec6941;
+}
+
+.wxStatistics li:nth-child(4) .wxStatistics_tu_bj {
+    background: #ec6941;
+}
+
+.wxStatistics li:nth-child(4) .wxStatistics_tu_bj em {
+    width: 0.33rem;
+    height: 0.43rem;
+    background: url(http://cdn.names.org.cn/website/Content/szname/img/wxStatistics_tu_bj_04.png) no-repeat;
+    background-size: 100%;
+    display: inline-block;
+    position: absolute;
+    top: -0.08rem;
+    right: -0.08rem;
+}
+
+.wxStatistics li:nth-child(5) span {
+    background: #81511c;
+}
+
+.wxStatistics li:nth-child(5) .wxStatistics_tu_bj {
+    background: #81511c;
+}
+
+.wxStatistics li:nth-child(5) .wxStatistics_tu_bj em {
+    width: 0.48rem;
+    height: 0.35rem;
+    background: url(http://cdn.names.org.cn/website/Content/szname/img/wxStatistics_tu_bj_05.png) no-repeat;
+    background-size: 100%;
+    display: inline-block;
+    position: absolute;
+    top: -0.08rem;
+    right: -0.25rem;
+}
+
+.OrdNameXys_Txt {
+    width: 100%;
+    line-height: 0.5rem;
+    font-size: 0.3rem;
+    text-indent: 2em;
+    text-align: left;
+}
+
+.WxDongTu {
+    width: 100%;
+    height: 6.08rem;
+    float: left;
+    margin-bottom: .3rem;
+}
+
+.WxDongTu img {
+    display: block;
+    position: inherit;
+    width: 6.1rem;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.OrdXys_con {
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 0.3rem;
+    transform: scale(0, 0);
+    transition: all 2s;
+    -webkit-transform: scale(0, 0);
+    -moz-transform: scale(0, 0);
+    -o-transform: scale(0, 0);
+    display: none;
+}
+
+.OrdXys_con .OrdXys_con_p {
+    width: 100%;
+    font-size: 0.3rem;
+    line-height: 0.5rem;
+    text-align: left;
+}
+
+.OrdXys_con .newdetailed {
+    font-size: 0.3rem;
+}
+
+.OrdXysConBot {
+    width: 100%;
+    overflow: hidden;
+}
+
+.OrdXysConBot_dl {
+    width: 100%;
+    overflow: hidden;
+}
+
+.OrdXysConBot_dl dt {
+    width: 2.2rem;
+    height: 2.72rem;
+    float: left;
+}
+
+.OrdXysConBot_dl dt img {
+    width: 2.2rem;
+    height: 2.62rem;
+    float: left;
+}
+
+.OrdXysConBot_dl dd {
+    font-size: 0.3rem;
+    float: left;
+    text-align: left;
+    width: 65%;
+    padding-left: 0.2rem;
+    letter-spacing: 0.02rem;
+    line-height: 0.45rem;
+}
+
+.OrdXysConBot_dl dd strong {
+    font-size: 0.32rem;
+}
+
+.OrdXysConBot_p {
+    font-size: 0.3rem;
+    text-align: left;
+    line-height: 0.45rem;
+    text-indent: 2em;
+}
+
+.OrdXysConBot_p span {
+    color: #c04442;
+}
+
+.li_height {
+    margin-bottom: .1rem;
+}
+
+.border_bottom_white {
+    border: 1px solid #fff
+}
+
+.recycle_border {
+    width: 0.4rem;
+    height: 0.4rem;
+    border-radius: 50%;
+    padding: 0.05rem;
+    display: inline-block;
+    border: 1px solid black;
+    margin-right: 0.1rem;
+}
+
+.recycle_uck {
+    background-color: white;
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+}
+
+.recycle_ck {
+    background-color: greenyellow;
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+}
+
+.enquiries {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    min-height: 2rem;
+}
+
+.enquiries .NewOrdBjImg {
+    top: 0 !important;
+}
+
+.enqui_banner {
+    width: 100%;
+    height: 2.89rem;
+    overflow: hidden;
+    background: yellowgreen;
+}
+
+.enqui_banner img {
+    width: 100%;
+    height: 100%;
+}
+
+.enqui_search {
+    width: 100%;
+    height: 1.48rem;
+    overflow: hidden;
+    padding: 0.3rem 0.75rem;
+    border-bottom: 1px solid #a0a0a0;
+}
+
+.enqui_sea_con {
+    width: 100%;
+    height: 100%;
+    border: 1px solid #000;
+    position: relative
+}
+
+.fangdaj {
+    width: 0.9rem;
+    height: 100%;
+    display: block;
+    background: url(http://cdn.names.org.cn/website/Content/szname/img/fangdaj.png) no-repeat 0.33rem 0.26rem #e30e27;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-size: 0.28rem;
+}
+
+.enqui_sea_con input {
+    width: 100%;
+    height: 100%;
+    float: left;
+    padding: 0 0.8rem 0 0.2rem;
+    line-height: 0.58rem;
+    font-size: 0.3rem;
+}
+
+.enqui_ul {
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 1rem;
+}
+
+.enqui_ul li {
+    padding: 0.24rem;
+    border-bottom: 1px solid #a0a0a0;
+}
+
+.enqui_ul li .enquiUl_top {
+    width: 100%;
+    height: 1.34rem;
+}
+
+.enqui_ul li .enquiUl_top h3 {
+    font-size: 0.32rem;
+    font-weight: normal;
+}
+
+.enqui_ul li .enquiUl_top p {
+    font-size: 0.28rem;
+    color: #9c9c9c;
+    line-height: 0.4rem;
+}
+
+.enquiUl_bot {
+    width: 100%;
+    height: 0.5rem;
+}
+
+.enquiUl_bot button {
+    width: 2rem;
+    height: 100%;
+    float: right;
+    text-align: center;
+    line-height: 0.5rem;
+    font-size: 0.3rem;
+    color: #fff;
+    background: #e30e27;
+    border-radius: 3px;
+}
+
+.enquiUl_bot .chakan {
+    margin-left: 0.25rem;
+    background: #f09713;
+}
+
+.pediatric {
+    position: relative;
+    padding: 0;
+    border: 0;
+}
+
+.pediatric_p {
+    text-align: center;
+    background: #a42d2e;
+    color: #fff;
+    width: 100%;
+    border: 1px solid #bc9d96;
+    border-bottom: 0;
+    line-height: 0.64rem;
+}
+
+.pediatric_tab {
+    background: #bc9d96 !important;
+}
+
+.pediatric_tab tr td:nth-child(2),
+.pediatric_tab tr td:nth-child(4) {
+    background: #fbeae6;
+}
+
+.pediatric_tab tr td:nth-child(1),
+.pediatric_tab tr td:nth-child(3) {
+    background: #f9d9d3;
+}
+
+.pediatric_bjimg {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 2.26rem;
+    height: 3.81rem;
+    background: url(http://cdn.names.org.cn/website/Content/szname/img/yuandatou.png) no-repeat;
+    background-size: 100%;
+    opacity: 0.3;
+}
+
+.pediatric_dl dd em {
+    display: inline-block;
+    width: 0.2rem;
+    height: 0.2rem;
+    border: 1px solid #a42d2e;
+    border-radius: 50%;
+    margin-right: 0.1rem;
+}
+
+.pediatric_ban {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.pediatric_ban img {
+    width: 100%;
+    height: 100%;
+}
+
+.pediatric_ban_bot {
+    width: 100%;
+    overflow: hidden;
+}
+
+.pediatric_ban_bot li {
+    width: 30%;
+    height: 0.7rem;
+    font-size: 0.32rem;
+    background: url(http://cdn.names.org.cn/website/Content/szname/img/pediatric_ban_botbj.png) no-repeat;
+    background-size: 100% 100%;
+    text-align: center;
+    line-height: 0.7rem;
+    float: left;
+    margin-right: 5%;
+    color: #fff;
+}
+
+.pediatric_ban_bot li:last-child {
+    margin-right: 0;
+}
+
+.pediatric_h3 {
+    width: 100%;
+    font-size: 0.3rem;
+    letter-spacing: 0.02rem;
+    text-align: center;
+    line-height: 0.82rem;
+}
+
+.pediatric_but {
+    width: 100%;
+    overflow: hidden;
+}
+
+.pediatric_butcon {
+    width: 70%;
+    height: 1.1rem;
+    line-height: 0.9rem;
+    color: #fff;
+    font-size: 0.36rem;
+    text-align: center;
+    background: url(http://cdn.names.org.cn/website/Content/szname/img/pediatric_button.png) no-repeat;
+    background-size: 100% 100%;
+    margin: 0 auto;
+    letter-spacing: 0.02rem;
+}
+
+.dsname {
+    width: 100%;
+    overflow: hidden;
+}
+
+.dsname .dsname_topimg {
+    width: 100%;
+    height: 7.55rem;
+    overflow: hidden;
+}
+
+.dsname .dsname_topimg img {
+    width: 100%;
+    height: 100%;
+}
+
+.efficacy {
+    width: 100%;
+    overflow: hidden;
+    padding: 0 0.15rem 0 0.18rem;
+}
+
+.efficacy img {
+    width: 100%;
+    height: 100%;
+}
+
+.dsname_con {
+    width: 100%;
+    overflow: hidden;
+    padding: 0 0.25rem;
+}
+
+.dsname_con .dsSetmeal {
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 0.47rem;
+}
+
+.dsSet_top {
+    width: 90%;
+    height: 1.1rem;
+    background: #fff;
+    margin: 0 auto;
+    color: #9b0300;
+    font-size: 0.38rem;
+    font-weight: bold;
+    text-align: center;
+    line-height: 1.1rem;
+    border: 4px solid #9b0300;
+    border-radius: 8px 8px 0 0;
+    border-width: 4px 4px 0 4px;
+    position: relative;
+}
+
+.dsSet_top span {
+    width: 0.94rem;
+    height: 0.91rem;
+    background: url(http://cdn.names.org.cn/website/Content/szname/img/dsSetmeal_01.png) no-repeat;
+    background-size: 100%;
+    display: block;
+    position: absolute;
+    bottom: 0;
+    right: 20%;
+}
+
+.dsSet_ul {
+    width: 100%;
+    overflow: hidden;
+    background: #fffffd;
+    border: 1px solid #bababb;
+    border-radius: 5px;
+}
+
+.dsSet_ul li {
+    width: 100%;
+    overflow: hidden;
+    border-bottom: 1px solid #bababb;
+}
+
+.dsSet_ul li .dsSet_ul_top {
+    width: 50%;
+    height: 0.68rem;
+    line-height: 0.68rem;
+    text-align: center;
+    font-size: 0.32rem;
+    display: inline-block;
+    float: left;
+    font-weight: bold;
+    color: #472920;
+}
+
+.dsSet_lil {
+    width: 26%;
+    height: 2.41rem;
+    float: left;
+    font-size: 0.3rem;
+    text-align: center;
+    line-height: 2.41rem;
+    font-weight: bold;
+    color: #9b0200;
+}
+
+.dsSet_lic {
+    width: 49%;
+    height: 2.41rem;
+    float: left;
+    font-size: 0.28rem;
+    padding-top: 0.7rem;
+    color: #232323;
+}
+
+.dsSet_lir {
+    width: 25%;
+    height: 2.41rem;
+    float: left;
+    color: #f83d2a;
+    font-size: 0.32rem;
+    font-weight: bold;
+    text-align: center;
+    line-height: 2.41rem;
+}
+
+.dsSet_lic p {
+    height: auto;
+    width: 100%;
+    text-align: center;
+}
+
+.dsSet_lic_but {
+    width: 100%;
+    height: 0.56rem;
+    line-height: 0.56rem;
+    margin-top: 0.2rem;
+}
+
+.dsSet_lic_but button {
+    width: 1.45rem;
+    height: 100%;
+    background: #a02224;
+    color: #fff;
+    font-size: 0.26rem;
+    text-align: center;
+    border-radius: 5px;
+    float: left;
+}
+
+.dsSet_liradio {
+    float: left;
+    position: relative;
+    padding-left: 0.45rem;
+    margin-left: 0.2rem;
+}
+
+.dsSet_liradio i {
+    display: inline-block;
+    width: 0.36rem;
+    height: 0.36rem;
+    background: url(http://cdn.names.org.cn/website/Content/szname/img/radio_kuang.png) no-repeat;
+    background-size: 1rem;
+    position: absolute;
+    top: calc(50% - 0.18rem);
+    left: 0;
+}
+
+.dsSetlibj {
+    background-color: #f8f8f0;
+}
+
+.noborder {
+    border: 0 !important;
+}
+
+.dsInfo {
+    width: 100%;
+    overflow: hidden;
+    background: #fff;
+    border-radius: 5px;
+    border: 1px solid #c4c4c4;
+}
+
+.dsInfo li {
+    width: 100%;
+    overflow: hidden;
+    border-bottom: 1px solid #c4c4c4;
+    line-height: 0.95rem;
+    height: 0.95rem;
+    position: relative;
+}
+
+.dsInfo li span {
+    display: inline-block;
+    width: 25.5%;
+    height: 100%;
+    float: left;
+    font-size: 0.32rem;
+    color: #440c0a;
+    float: left;
+    padding-left: 0.2rem;
+}
+
+.dsInfo li input {
+    width: 74.5%;
+    height: 100%;
+    float: left;
+    font-size: 0.28rem;
+}
+
+.dsInfo li .remark {
+    width: 74.5%;
+    font-size: 0.28rem;
+    padding-top: 0.3rem;
+    line-height: 0.4rem;
+}
+
+.dsInfo li.remarkcon {
+    height: 1.85rem !important;
+    border: 0;
+}
+
+.dsInfo li em {
+    display: block;
+    width: 0.16rem;
+    height: 0.27rem;
+    background: url(http://cdn.names.org.cn/website/Content/szname/img/member_icon.png) no-repeat 0 -1.23rem;
+    background-size: 1.5rem;
+    position: absolute;
+    top: calc(50% - 0.135rem);
+    right: 0.4rem;
+    transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+}
+
+.urgency {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    color: #8c0e0e;
+    font-size: 0.28rem;
+    padding-left: 0.66rem;
+    line-height: 0.84rem;
+    text-align: left;
+}
+
+.urgency i {
+    display: inline-block;
+    width: 0.36rem;
+    height: 0.36rem;
+    background: url(http://cdn.names.org.cn/website/Content/szname/img/radio_kuang.png) no-repeat;
+    background-size: 1rem;
+    position: absolute;
+    top: calc(50% - 0.18rem);
+    left: 0.2rem;
+}
+
+.prompting {
+    width: 100%;
+    height: 0.5rem;
+    font-size: 0.28rem;
+    text-align: left;
+    color: #888888;
+}
+
+.prompting span {
+    color: #1a16c8;
+}
+
+.dsInfo_but {
+    width: 100%;
+    height: 0.84rem;
+    line-height: 0.84rem;
+    background: #a02224;
+    float: left;
+    color: #fff;
+    text-align: center;
+    font-size: 0.32rem;
+    margin-bottom: 0.4rem;
+    border-radius: 5px;
+}
+
+.my_order {
+    font-size: 0.32rem;
+    text-align: right;
+    display: block;
+    float: left;
+    width: 100%;
+    height: 0.55rem;
+}
+
+.nameflow {
+    width: 100%;
+    overflow: hidden;
+    background: #f8f8f0;
+    border: 1px solid #d2d2d2;
+    border-radius: 5px;
+    margin-bottom: 0.5rem;
+}
+
+.nameflow .nameflowha {
+    font-size: 0.4rem;
+    width: 100%;
+    line-height: 1.08rem;
+    color: #9b0300;
+}
+
+.nameflowcon {
+    width: 100%;
+    overflow: hidden;
+    padding: 0 0.5rem 0.3rem;
+    border-bottom: 1px solid #d2d2d2;
+}
+
+.nameflowcon dl {
+    width: 100%;
+    overflow: hidden;
+}
+
+.nameflowcon dl dt {
+    width: 100%;
+    height: 0.74rem;
+    line-height: 0.74rem;
+    text-align: center;
+    color: #fff;
+    background: #9b0300;
+    font-size: 0.32rem;
+    border-radius: 20px;
+}
+
+.nameflowcon dl dd {
+    width: 100%;
+    height: 0.54rem;
+    position: relative;
+}
+
+.nameflowcon dl dd em {
+    width: 0.26rem;
+    height: 0.15rem;
+    background: url(http://cdn.names.org.cn/website/Content/szname/img/nameflowcon_jt.png) no-repeat;
+    background-size: 100%;
+    position: absolute;
+    top: calc(50% - 0.075rem);
+    left: calc(50% - 0.13rem);
+}
+
+.nameflowhb {
+    width: 100%;
+    overflow: hidden;
+    font-size: 0.3rem;
+    line-height: 0.5rem;
+    color: #44281e;
+    padding: 0.3rem 0 0.2rem;
+}
+
+.nameflowhb span {
+    color: #9b0300;
+}
+
+.nameflowhb span,
+.nameflowhb i {
+    text-decoration: underline
+}
+
+.nameflowImg {
+    width: 100%;
+    height: 4.64rem;
+    overflow: hidden;
+    padding: 0 0.25rem;
+    margin-bottom: 0.25rem;
+    position: relative;
+}
+
+.nameflowImg img {
+    width: 100%;
+    height: 100%;
+}
+
+.nameflowImg span {
+    font-size: 0.26rem;
+    color: #d20f0b;
+    position: absolute;
+    top: 1.7rem;
+    right: 0.22rem;
+    font-weight: bold;
+}
+
+.introduce {
+    font-size: 0.38rem;
+    color: #000;
+    padding: 0 0.2rem 0.5rem;
+    text-indent: 2em;
+    text-align: left;
+}
+
+.attestation {
+    width: 100%;
+    overflow: hidden;
+    padding: 0 0.45rem 0.3rem;
+}
+
+.attestation dt {
+    width: 100%;
+    height: 4.87rem;
+    margin-bottom: 0.23rem;
+}
+
+.attestation dt img {
+    width: 100%;
+    height: 100%;
+}
+
+.attestation dd {
+    width: 100%;
+    height: 2.37rem;
+    overflow: hidden;
+    margin-bottom: 0.16rem;
+}
+
+.attestation dd img {
+    width: 48.5%;
+    display: block;
+    float: left;
+    height: 100%;
+}
+
+.attestation dd img:last-child {
+    float: right;
+}
+
+.dsfooter {
+    width: 100%;
+    overflow: hidden;
+    font-size: 0.26rem;
+    color: #fff;
+    background: #9b0300;
+    line-height: 0.45rem;
+    padding: 0.6rem 0 0.5rem;
+    margin-bottom: 1.1rem;
+}
+
+.fanhui_but {
+    width: 1.13rem;
+    height: 1.1rem;
+    background: url(http://cdn.names.org.cn/website/Content/szname/img/fanhui_but.png) no-repeat;
+    background-size: 100%;
+    position: fixed;
+    left: 3%;
+    bottom: 7%;
+}
+
+/*taocan*/
+.taocancon {
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99999;
+    display: none;
+}
+
+.taocancon .taocancon_box {
+    width: 6.5rem;
+    height: 8rem;
+    background: url(http://cdn.names.org.cn/website/Content/szname/img/taocanCon_bj.png) no-repeat;
+    background-size: 100%;
+    position: fixed;
+    top: calc(50% - 3.5rem);
+    left: calc(50% - 3.25rem);
+    border-radius: 5px;
+}
+
+.taocancon_box img {
+    display: block;
+    width: 5.74rem;
+    height: 2.25rem;
+    margin: 0.4rem auto 0.2rem;
+}
+
+.taocancon_box_no {
+    width: 0.7rem;
+    height: 1.12rem;
+    background: url(http://cdn.names.org.cn/website/Content/szname/img/taocanCon_none.png) no-repeat;
+    background-size: 0.7rem;
+    position: absolute;
+    top: -1.1rem;
+    right: 0;
+}
+
+.taocancon_box .taocancon_h2 {
+    width: 100%;
+    overflow: hidden;
+    font-size: 0.44rem;
+    text-align: center;
+    font-weight: normal;
+    color: #662d14;
+    height: 0.6rem;
+}
+
+.taocancon_p {
+    width: 100%;
+    overflow: hidden;
+    font-size: 0.32rem;
+    text-align: center;
+    margin-bottom: 0.2rem;
+    padding: 0 0.2rem;
+}
+
+.taocancon_dl {
+    width: 100%;
+    padding: 0 0.55rem;
+    font-size: 0.28rem;
+    color: #242424;
+    text-align: center;
+    letter-spacing: 0.01rem;
+}
+
+.taocancon_dl dt {
+    font-size: 0.32rem;
+    color: #662d14;
+    letter-spacing: 0.03rem;
+}
+
+.taocancon_dl dd {
+    margin-bottom: 0.35rem;
+    line-height: 0.4rem;
+    font-size: 0.3rem;
+}
+
+#boxgung {
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+}
+
+.xegs_tips {
+    width: 100%;
+    height: 1.3rem;
+    background: url(http://cdn.names.org.cn/website/Content/szname/img/xegx_bjk.png) no-repeat;
+    background-size: 100% 100%;
+    margin: 0.4rem 0;
+    font-size: 0.36rem;
+    font-weight: bold;
+    line-height: 0.5rem;
+    padding-top: 0.15rem;
+    color: #3f4540;
+}
+
+.xegs_tips i {
+    color: #a42d2e;
+}
+
+.pediatric_h4 {
+    font-size: 0.3rem;
+    margin-bottom: 0.3rem;
+    text-align: left;
+}
+
+.pediatric_h4 i {
+    color: #a02224;
+}
+
+.weiname_but {
+    width: 100%;
+    height: 0.7rem;
+    margin: 0.3rem 0 0.5rem;
+    padding: 0 0.35rem;
+}
+
+.weiname_but span {
+    width: 40%;
+    height: 100%;
+    font-size: 0.32rem;
+    color: #fff;
+    background: #c02525;
+    display: inline-block;
+    float: left;
+    text-align: center;
+    line-height: 0.7rem;
+    letter-spacing: 0.02rem;
+    border-radius: 5px;
+}
+
+.weiname_but span.weiname_but_x {
+    float: right;
+}
+
+.weiname_but_page {
+    width: 20%;
+    float: left;
+    font-size: 0.32rem;
+    line-height: 0.7rem;
+}
+
+.xegs_weiImg {
+    width: 100%;
+    overflow: hidden;
+}
+
+.xegs_weiImg img {
+    width: 3rem;
+    height: 3rem;
+    display: block;
+    margin: 0 auto;
+}
+
+.xegs_weiImg p {
+    font-size: 0.3rem;
+    margin: 0.4rem 0;
+    color: #a02224;
+}
+
+.xegs_weiImg p i {
+    width: 0.27rem;
+    height: 0.24rem;
+    background: url(http://cdn.names.org.cn/website/Content/szname/img/sanjiao.png) no-repeat;
+    display: inline-block;
+    background-size: 100%;
+    margin-right: 0.1rem;
+}

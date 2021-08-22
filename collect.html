@@ -1,0 +1,3036 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport"
+        content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta charset="UTF-8">
+    <title>名字收藏</title>
+
+    <style>
+        .WeiConX_Dl {
+            width: 100%;
+            overflow: hidden;
+            padding: 0.25rem 0;
+            font-size: 0.3rem;
+            border-bottom: 1px solid #d2d2d2;
+        }
+
+        .WeiConX_Dl dt {
+            font-size: 0.34rem;
+            font-weight: bold;
+            margin-bottom: 0.2rem;
+        }
+
+        .WeiConX_Dl dd {
+            text-indent: 2em;
+            line-height: 0.45rem;
+        }
+
+        .Weidsqm_titImg {
+            width: 100%;
+            overflow: hidden;
+            padding: 0 0.52rem;
+            margin-top: 0.6rem;
+        }
+
+        .Weidsqm_titImg img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .Weidsqm_titImg dt {
+            float: left;
+            width: 55.5%;
+            height: 3.11rem;
+            margin-right: 1.5%;
+        }
+
+        .Weidsqm_titImg dd {
+            float: left;
+            width: 43%;
+            height: 1.51rem;
+            margin-bottom: 0.09rem;
+        }
+
+        .WeiList_jiaz {
+            display: none;
+            position: absolute;
+            top: 2.5rem;
+            left: 0;
+            width: 100%;
+            height: 0.5rem;
+        }
+
+        .WeiList_jiaz img {
+            width: 0.32rem;
+            height: 100%;
+            display: block;
+            margin: 0 auto;
+            transition: 2s;
+        }
+
+        .transform {
+            transform: rotateX(180deg);
+            -webkit-transform: rotateX(180deg);
+            -moz-transform: rotateX(180deg);
+            -ms-transform: rotateX(180deg);
+        }
+
+        .weiNamexuanz {
+            width: 100%;
+            height: 0.9rem;
+            background: #fff;
+            border-bottom: 1px solid #aaaaaa;
+            padding: 0.25rem 0;
+            display: none;
+        }
+
+        .weiNamexuanz li {
+            width: 33.3%;
+            height: 100%;
+            font-size: 0.3rem;
+            float: left;
+            padding-left: 0.26rem;
+        }
+
+        .weiNamexuanz li div {
+            height: 100%;
+            float: left;
+            text-align: center;
+            position: relative;
+            padding-left: 0.4rem;
+        }
+
+        .weiNamexuanz li div:first-child {
+            margin-right: 0.2rem;
+        }
+
+        .weiNamexuanz li div i {
+            display: inline-block;
+            width: 0.27rem;
+            height: 0.27rem;
+            background: url(http://cdn.names.org.cn/website/Content/szname/img/weiNamexuanz_radio.png) no-repeat;
+            background-size: 1rem;
+            position: absolute;
+            top: calc(50% - 0.135rem);
+            left: 0;
+        }
+
+        .weiNamexuanz li:first-child {
+            border-right: 1px solid #aaaaaa;
+        }
+
+        .sexcolor {
+            background-position: -0.69rem 0 !important;
+        }
+
+        .Namezicolor {
+            background-position: -0.69rem 0 !important;
+        }
+
+        .NameBut {
+            width: 1.5rem;
+            height: 100%;
+            color: #fff;
+            background: #c02525;
+            text-align: center;
+            line-height: 0.45rem;
+            margin: 0 auto;
+            display: block;
+            border-radius: 5px;
+        }
+
+
+        .WeiIndex_box {
+            display: none;
+            z-index: 99999;
+        }
+
+        .Weictable {
+            background: #adacaa;
+            width: 100%;
+        }
+
+        .Weictable tr {
+            width: 100%;
+            text-align: center;
+        }
+
+        .Weictable tr td {
+            width: 20%;
+            padding: 0.1rem 0;
+            color: #000 !important;
+            font-size: 0.3rem;
+        }
+
+        .Weictable tr:nth-child(1) td,
+        .Weictable tr:nth-child(3) td,
+        .Weictable tr:nth-child(5) td,
+        .Weictable tr:nth-child(7) td {
+            background: #e3dad8;
+            color: #c43535;
+        }
+
+        .Weictable tr:nth-child(2) td,
+        .Weictable tr:nth-child(4) td,
+        .Weictable tr:nth-child(6) td {
+            background: #f5efee;
+            color: #c43535;
+        }
+
+        .Setmeal {
+            width: 100%;
+            overflow: hidden;
+            border-bottom: 1px solid #edecec;
+            margin-bottom: 0.3rem;
+        }
+
+        .Setmeal h2 {
+            line-height: 0.86rem;
+            width: 100%;
+            font-size: 0.35rem;
+            letter-spacing: 0.02rem;
+        }
+
+        .SetmealCon {
+            width: 100%;
+            font-size: 0.3rem;
+            line-height: 0.56rem;
+            letter-spacing: 0.02rem;
+            border: 1px solid #edecec;
+        }
+
+        .SetmealCon li {
+            width: 100%;
+            overflow: hidden;
+            border-bottom: 1px solid #edecec;
+            height: auto;
+            background: #ece6e5;
+        }
+
+        .SetmealCon li:last-child {
+            border-bottom: 0;
+        }
+
+        .SetmealCon .smallTit {
+            padding-left: 0.3rem;
+            position: relative;
+            padding-left: 0.43rem;
+            background: #f9f5f4;
+        }
+
+        .SetmealCon .smallTit i {
+            width: 0.19rem;
+            height: 0.19rem;
+            background: url(http://cdn.names.org.cn/website/Content/szname/img/icon.png) no-repeat;
+            background-size: 1rem;
+            display: block;
+            position: absolute;
+            top: calc(50% - 0.095rem);
+            left: 0.16rem;
+        }
+
+        .SetmealCon .smallTit b {
+            font-weight: normal;
+        }
+
+        .SetConTit {
+            width: 100%;
+            text-align: center;
+            font-size: 0.33rem;
+            font-weight: bold;
+            color: #c04442;
+            background: #ece6e5;
+        }
+
+        .SetmealCon li span {
+            overflow: hidden;
+        }
+
+        .SetmealCon li .SetConUl_l {
+            width: 30%;
+            display: block;
+            float: left;
+            background: #ece6e5;
+            height: 100%;
+            text-align: center;
+            color: #c04442;
+        }
+
+        .SetmealCon li .SetConUl_r {
+            width: 70%;
+            display: block;
+            float: left;
+            border-left: 1px solid #edecec;
+            padding: 0 0.14rem;
+            background: #fff;
+            line-height: 0.55rem;
+        }
+
+        .SetConUlColor {
+            background: #f9f5f4;
+        }
+
+        .SetConUl_r ol {
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .SetConUl_r ol li {
+            border: 0;
+            background: none;
+            line-height: 0.5rem;
+        }
+
+        .SetConUl_r ol li em {
+            color: #c04442;
+        }
+
+        .SetConUl_r ol li em:first-child {
+            margin-right: 0.37rem;
+        }
+
+        .Setmeal_p {
+            width: 100%;
+            font-size: 0.3rem;
+            margin: 0.25rem 0;
+            line-height: 0.5rem;
+        }
+
+        .Setmeal_p span {
+            width: 0.25rem;
+            height: 0.25rem;
+            display: block;
+            background: url(http://cdn.names.org.cn/website/Content/szname/img/icon.png) no-repeat -0.75rem 0;
+            background-size: 1rem;
+            float: left;
+            margin: 0.13rem 0.15rem 0 0;
+        }
+
+        .Noborder {
+            border: 0 !important;
+        }
+
+        .Weinamelist {
+            width: 100%;
+            overflow: hidden;
+            padding-left: 0.2rem;
+            /*position:absolute;top:2.7rem;left:0;*/
+            margin-top: 1.8rem;
+        }
+
+        .Weinamelist li {
+            width: 6.8rem;
+            height: 2.23rem;
+            overflow: hidden;
+            border-radius: 5px;
+            background: url('./img/161.png');
+            background-size: 100% 100%;
+            padding-left: 0.15rem;
+            margin: 0 auto;
+            margin-top: 10px;
+        }
+
+        .Weinamelist_l {
+            width: 64%;
+            overflow: hidden;
+            float: left;
+        }
+
+        .WeinameLl_Con {
+            width: 1rem;
+            height: 2.1rem;
+            margin-right: .15rem;
+            padding-top: 0.15rem;
+            float: left;
+        }
+
+        .WeinameLl_Con:last-child {
+            margin-right: 0 !important;
+        }
+
+        .WeinameLl_Con p {
+            font-size: 0.32rem;
+            color: #383838;
+            line-height: .5rem;
+            text-align: center;
+            width: 100%;
+        }
+
+        .WeinameLl_Con span {
+            width: 0.89rem;
+            height: 0.9rem;
+            background: url(http://cdn.names.org.cn/website/Content/szname/img/NewNameBjk.png) no-repeat;
+            background-size: 100%;
+            font-size: 0.5rem;
+            text-align: center;
+            line-height: 0.89rem;
+            display: block;
+            margin: 0 auto;
+            color: #397879;
+        }
+
+        .WeinameLl_Con i {
+            width: 100%;
+            line-height: 0.44rem;
+            text-align: center;
+            font-size: 0.24rem;
+            color: #c33936;
+            display: block;
+        }
+
+        .WeinameLl_Con:last-child {
+            margin-right: 0;
+        }
+
+        .Weinamelist_r {
+            width: 36%;
+            float: left;
+            display: block;
+            overflow: hidden;
+            height: 2.1rem;
+            line-height: 2.1rem;
+        }
+
+        .Weinamelist_r span {
+            display: inline-block;
+            width: auto;
+            height: 1rem;
+            line-height: 1rem;
+            font-size: 0.28rem;
+            margin-left: 0.25rem;
+            position: relative;
+        }
+
+        .Weinamelist_r .collect i {
+            width: 0.33rem;
+            height: 0.33rem;
+            background: url(http://cdn.names.org.cn/website/Content/szname/img/icon.png) no-repeat 0 -0.41rem;
+            background-size: 1rem;
+            display: block;
+            position: absolute;
+            top: -0.15rem;
+            left: calc(50% - 0.165rem);
+        }
+
+        .collectdinw {
+            background-position: -0.67rem -0.41rem !important;
+        }
+
+        .Weinamelist_r .parsing:before {
+            content: '';
+            width: 0.32rem;
+            height: 0.33rem;
+            display: block;
+            position: absolute;
+            top: -0.15rem;
+            left: calc(50% - 0.165rem);
+            background: url(http://cdn.names.org.cn/website/Content/szname/img/icon.png) no-repeat 0 -0.97rem;
+            background-size: 1rem;
+        }
+
+        .NoBox {
+            width: 100Vw;
+            height: 100Vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 99999;
+            display: none;
+        }
+
+        .NoBox_bjNo {
+            background: rgba(0, 0, 0, .7);
+            width: 100%;
+            height: 100vh;
+        }
+
+        .NoBox_bj {
+            width: 6rem;
+            height: 9rem;
+            position: fixed;
+            top: calc(50% - 3.8rem);
+            left: calc(50% - 3rem);
+            background: #fbd439;
+            border-radius: 5px;
+        }
+
+        .NoBox_Nav {
+            width: 7rem;
+            height: 1.22rem;
+            background: url(http://cdn.names.org.cn/website/Content/szname/img/NoBox_nav.png) no-repeat;
+            background-size: 100% 100%;
+            position: absolute;
+            top: -1.1rem;
+            left: calc(50% - 3.5rem);
+        }
+
+        .NoBox_h {
+            width: 100%;
+            overflow: hidden;
+            font-size: 0.36rem;
+            text-align: center;
+            line-height: 0.45rem;
+            margin-top: 0.35rem;
+            letter-spacing: 0.01rem;
+        }
+
+        .NoBox_Img {
+            width: 100%;
+            height: 2.56rem;
+            overflow: hidden;
+            margin: 0.2rem 0;
+        }
+
+        .NoBox_Img img {
+            width: 2.76rem;
+            height: 100%;
+            margin: 0 auto;
+            display: block;
+        }
+
+        .NoBox_p {
+            width: 100%;
+            font-size: 0.3rem;
+            padding: 0 0.4rem;
+        }
+
+        .NoBox_divcon {
+            width: 100%;
+            font-size: 0.3rem;
+            padding: 0 0.3rem;
+            float: left;
+            margin-bottom: 0.15rem;
+            line-height: 0.4rem;
+        }
+
+        .NoBox_divcon span {
+            display: block;
+            width: 1.2rem;
+            height: 0.4rem;
+            float: left;
+            background: #ea0c25;
+            border-radius: 3px;
+            color: #fff;
+            text-align: center;
+            line-height: 0.36rem;
+            margin-right: 0.15rem;
+        }
+
+        .NoBox_But {
+            width: 3.13rem;
+            height: 0.81rem;
+            position: absolute;
+            bottom: 0.3rem;
+            left: calc(50% - 1.565rem);
+            background: url(http://cdn.names.org.cn/website/Content/szname/img/yysdbhb_But.png) no-repeat;
+            background-size: 100%;
+            z-index: 9999999;
+        }
+
+        .tzjiazai {
+            width: 100vw;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background: #fff;
+            display: none;
+        }
+
+        .tzjiazai img {
+            width: 2.39rem;
+            height: 2.61rem;
+            display: block;
+            position: fixed;
+            top: calc(50% - 1.305rem);
+            left: calc(50% - 1.195rem);
+        }
+
+        /*浼氬憳涓績椤甸潰*/
+        .member {
+            width: 100%;
+            overflow: hidden;
+            background: #e6ebef;
+        }
+
+        .member nav {
+            width: 100%;
+            height: 1.14rem;
+            background: #383838;
+            text-align: center;
+            line-height: 1.14rem;
+            font-size: 0.38rem;
+            color: #fff;
+            overflow: hidden;
+        }
+
+        .member_menu {
+            width: 100%;
+            overflow: hidden;
+            background: #fff;
+            margin-bottom: 0.16rem;
+        }
+
+        .member_menu li {
+            font-size: 0.36rem;
+            line-height: 0.95rem;
+            border-bottom: 1px solid #e9e9e9;
+            padding-left: 0.96rem;
+            position: relative;
+        }
+
+        .member_menu li a {
+            color: #383838;
+            width: 100%;
+            height: 100%;
+            display: inline-block;
+        }
+
+        .member_menu li:after {
+            content: '';
+            width: 0.39rem;
+            height: 0.38rem;
+            background: url(http://cdn.names.org.cn/website/Content/szname/img/member_icon.png) no-repeat;
+            background-size: 1.5rem;
+            display: block;
+            position: absolute;
+            top: calc(50% - 0.19rem);
+            left: 0.27rem;
+        }
+
+        .member_menu li:nth-child(2):after {
+            background-position: -1.15rem 0;
+            height: 0.42rem;
+            top: calc(50% - 0.21rem);
+        }
+
+        .member_menu li:nth-child(3):after {
+            background-position: 0 -0.66rem;
+            width: 0.43rem;
+            height: 0.4rem;
+        }
+
+        .member_menu li:nth-child(4):after {
+            background-position: -1.09rem -0.66rem;
+            width: 0.43rem;
+            height: 0.4rem;
+        }
+
+        .member_menu li:before {
+            content: '';
+            display: block;
+            width: 0.16rem;
+            height: 0.27rem;
+            background: url(http://cdn.names.org.cn/website/Content/szname/img/member_icon.png) no-repeat 0 -1.23rem;
+            background-size: 1.5rem;
+            position: absolute;
+            top: calc(50% - 0.135rem);
+            right: 0.4rem;
+        }
+
+        /*user_mask*/
+        .user_mask {
+            width: 100%;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0);
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 9999;
+        }
+
+        .mem_info {
+            width: 100%;
+            overflow: hidden;
+            background: #fff;
+            margin-bottom: 0.16rem;
+        }
+
+        .mem_info_con {
+            width: 100%;
+            overflow: hidden;
+            padding: 0 0.25rem;
+        }
+
+        .mem_info_con li {
+            width: 100%;
+            height: 0.98rem;
+            line-height: 0.98rem;
+            border-bottom: 1px solid #c4c4c4;
+            font-size: 0.32rem;
+            position: relative;
+        }
+
+        .mem_info_con li em {
+            display: block;
+            width: 0.16rem;
+            height: 0.27rem;
+            background: url(http://cdn.names.org.cn/website/Content/szname/img/member_icon.png) no-repeat 0 -1.23rem;
+            background-size: 1.5rem;
+            position: absolute;
+            top: calc(50% - 0.135rem);
+            right: 0.4rem;
+            transform: rotate(90deg);
+            -webkit-transform: rotate(90deg);
+            -ms-transform: rotate(90deg);
+            -o-transform: rotate(90deg);
+            -moz-transform: rotate(90deg);
+        }
+
+        .mem_info_con li h2 {
+            font-size: 0.36rem;
+            color: #9b0300;
+            text-align: center;
+        }
+
+        .mem_info_con li span {
+            width: 25.5%;
+            display: inline-block;
+            height: 100%;
+            padding-left: 0.15rem;
+            float: left;
+        }
+
+        .mem_info_con li input {
+            width: 74.5%;
+            height: 100%;
+            display: inline-block;
+            float: left;
+            font-size: 0.3rem;
+        }
+
+        .mem_radio {
+            width: 74.5%;
+            height: 100%;
+            float: left;
+            padding: 0.2rem 0;
+        }
+
+        .mem_radio .mem_elect {
+            position: relative;
+            padding-left: 0.55rem;
+            float: left;
+            margin-right: 0.27rem;
+            height: 100%;
+            line-height: 0.58rem;
+            font-size: 0.3rem;
+        }
+
+        .mem_radio .mem_elect i {
+            display: inline-block;
+            width: 0.36rem;
+            height: 0.36rem;
+            background: url(http://cdn.names.org.cn/website/Content/szname/img/radio_kuang.png) no-repeat;
+            background-size: 1rem;
+            position: absolute;
+            top: calc(50% - 0.18rem);
+            left: 0;
+        }
+
+        .mem_elect_gou {
+            background-position: -0.63rem 0 !important;
+        }
+
+        .mem_but {
+            width: 100%;
+            height: 1.2rem;
+            padding-top: 0.24rem;
+        }
+
+        #memButton {
+            width: 3.12rem;
+            height: 0.9rem;
+            background: url(http://cdn.names.org.cn/website/Content/szname/img/me_anniu.png) no-repeat;
+            background-size: 100%;
+            font-size: 0.34rem;
+            color: #fff;
+            letter-spacing: 0.02rem;
+            display: block;
+            text-align: center;
+            line-height: 0.7rem;
+            margin: 0 auto;
+        }
+
+        .mem_footer {
+            width: 100%;
+            overflow: hidden;
+            background: #fff;
+            padding-bottom: 0.5rem;
+        }
+
+        .mem_f_top {
+            width: 100%;
+            overflow: hidden;
+            padding: 0.4rem 0.28rem 0.4rem 0.5rem;
+        }
+
+        .mem_f_top img {
+            display: block;
+            width: 2.16rem;
+            height: 2.2rem;
+            float: left;
+        }
+
+        .mem_f_top_r {
+            width: 67%;
+            float: left;
+        }
+
+        .mem_f_top_r h2 {
+            font-size: 0.34rem;
+            color: #000;
+            font-weight: bold;
+            height: auto;
+            width: 100%;
+            margin: 0.3rem 0 0.2rem;
+        }
+
+        .mem_f_top_r p {
+            width: 100%;
+            line-height: 0.36rem;
+            font-size: 0.3rem;
+            color: #494949;
+        }
+
+        .mem_foot_ul {
+            width: 100%;
+            overflow: hidden;
+            padding: 0 0.2rem;
+            font-size: 0.26rem;
+        }
+
+        .mem_foot_ul li {
+            width: 50%;
+            float: left;
+            border: 1px solid #d2d2d2;
+            border-width: 1px 1px 0 0;
+            padding: 0.25rem 0.2rem 0.16rem;
+            overflow: hidden;
+            height: 1.66rem;
+        }
+
+        .mem_foot_ul li:nth-child(2),
+        .mem_foot_ul li:nth-child(4) {
+            border-right: 0;
+        }
+
+        .mem_foot_ul li:nth-child(3),
+        .mem_foot_ul li:nth-child(4) {
+            border-bottom-width: 1px;
+        }
+
+        .mem_foot_ul li .mem_foot_li_l {
+            width: 58%;
+            float: left;
+        }
+
+        .mem_foot_ul li .mem_foot_li_l h2 {
+            font-size: 0.32rem;
+            font-weight: normal;
+            color: #000;
+        }
+
+        .mem_foot_ul li .mem_foot_li_l p {
+            color: #494949;
+            font-size: 0.24rem;
+        }
+
+        .mem_foot_ul li img {
+            display: block;
+            width: 1.25rem;
+            height: 1.24rem;
+            float: right;
+        }
+
+        /*Login*/
+        .welogin {
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            padding: 0 0.7rem;
+        }
+
+        .weLogininfo {
+            width: 100%;
+            overflow: hidden;
+            z-index: 66666;
+            margin: 60% auto 0;
+        }
+
+        .weLogininfo_ul {
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .weLogininfo_ul li {
+            width: 100%;
+            overflow: hidden;
+            margin-bottom: 0.2rem;
+        }
+
+        .weLogininfo_ul li em {
+            width: 50%;
+            height: 100%;
+            display: inline-block;
+            float: left;
+        }
+
+        .weLogininfo_ul li em i {
+            width: 1.8rem;
+            height: 0.8rem;
+            float: left;
+            font-size: 0.45rem;
+            display: block;
+            margin: 0 auto;
+            text-align: center;
+            line-height: 0.8rem;
+        }
+
+        .weLogininfo_ul li em:first-child i {
+            float: right;
+        }
+
+        .weLogininfo_ul li em:last-child i {
+            float: left;
+        }
+
+        .loginsexcol {
+            background: url(http://cdn.names.org.cn/website/Content/szname/img/xlxuanz_radioA.png) no-repeat 0.2rem 0.08rem;
+            background-size: 100% 80%;
+            color: #fff;
+        }
+
+        .loginxzcol {
+            background: url(http://cdn.names.org.cn/website/Content/szname/img/xlxuanz_radioA.png) no-repeat 0.2rem 0.08rem;
+            background-size: 100% 80%;
+            color: #fff;
+        }
+
+        .weLogininfo_ul li span {
+            width: 30%;
+            font-size: 0.34rem;
+            display: block;
+            float: left;
+            text-align: right;
+            letter-spacing: 0.02rem;
+        }
+
+        .weLogininfo_ul li input {
+            width: 67%;
+            height: 0.55rem;
+            display: inline-block;
+            float: left;
+            border-bottom: 1px solid #d2d2d2;
+            margin-left: 3%;
+            font-size: 0.3rem;
+        }
+
+        .weinfo_but {
+            width: 2.7rem;
+            height: 0.85rem;
+            text-align: center;
+            font-size: 0.34rem;
+            line-height: 0.85rem;
+            background: url(http://cdn.names.org.cn/website/Content/szname/img/xlxuanz_radiobut.png) no-repeat 0 0.1rem;
+            background-size: 100%;
+            color: #fff;
+            letter-spacing: 0.02rem;
+            margin: 0.6rem auto 0;
+            display: block;
+        }
+
+        .Motherfu {
+            width: 2.4rem;
+            height: 0.5rem;
+            font-size: 0.3rem;
+            color: #e32417;
+            font-weight: 400;
+            position: relative;
+            padding-left: 0.5rem;
+            margin: 1.8rem auto 0;
+        }
+
+        .Motherfu i {
+            width: 0.3rem;
+            height: 0.41rem;
+            background: url(http://cdn.names.org.cn/website/Content/szname/img/muzifu.png) no-repeat;
+            background-size: 100%;
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    </style>
+
+    <style>
+        html,
+        body,
+        h1,
+        h2,
+        h3,
+        h4,
+        p,
+        div,
+        ul,
+        li,
+        ol,
+        dl,
+        dt,
+        dd,
+        span,
+        i,
+        em,
+        strong,
+        button,
+        table,
+        textarea,
+        input,
+        b,
+        nav,
+        footer,
+        form,
+        frame,
+        img {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            box-sizing: border-box;
+            border: 0;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            -ms-box-sizing: border-box;
+            outline: none;
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            font-style: normal;
+        }
+
+        html {
+            font-size: 13.333vw;
+        }
+
+        a:link,
+        a:hover,
+        a:visited {
+            text-decoration: none;
+        }
+
+        @media screen and (min-width:415px) and (max-width:639px) {
+
+            html,
+            body {
+                font-size: 54px;
+            }
+        }
+
+        @media screen and (min-width:640px) and (max-width:719px) {
+
+            html,
+            body {
+                font-size: 64px;
+            }
+        }
+
+        @media screen and (min-width:750px) {
+
+            html,
+            body {
+                font-size: 72px;
+                max-width: 750px;
+                margin: 0 auto;
+            }
+
+            .NewOrderNav,
+            .NewOrdBjImg {
+                left: calc(50% - 375px) !important;
+            }
+
+            .bot_head {
+                left: calc(50% - 375px) !important;
+            }
+
+            .certUl li div.certUl_l img.certUl_b {
+                height: 2.97rem !important;
+            }
+
+            .nameflowImg span {
+                right: 1rem !important;
+            }
+
+            .nameflowImg span {
+                top: 2.6rem !important;
+            }
+        }
+
+        /*鍏ㄥ眬鏍峰紡*/
+
+        /*澶撮儴*/
+        .NewOrderNav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 9999;
+            max-width: 750px;
+        }
+
+        .NewNav {
+            width: 100%;
+            height: 0.9rem;
+            line-height: 0.9rem;
+            text-align: center;
+            font-size: 0.36rem;
+            color: #fff;
+            background: #397879;
+            letter-spacing: 0.02rem;
+            position: relative;
+        }
+
+        .NewNav span {
+            width: 0.2rem;
+            height: 0.35rem;
+            background: url(http://cdn.names.org.cn/website/Content/szname/img/NewNav.png) no-repeat;
+            background-size: 100%;
+            display: inline-block;
+            position: absolute;
+            top: calc(50% - 0.175rem);
+            left: 0.24rem;
+        }
+
+        .NewOrder {
+            width: 100%;
+            overflow: hidden;
+            margin-top: 1.8rem;
+            text-align: center;
+        }
+
+        .Neworder_tit {
+            width: 100%;
+            height: 0.89rem;
+            border-bottom: 1px solid #aaaaaa;
+            background: #f8f8f8;
+            padding: 0.17rem 0 0.13rem;
+        }
+
+        .Neworder_tit li {
+            font-size: 0.28rem;
+            float: left;
+            width: 25%;
+            height: 100%;
+            text-align: center;
+            line-height: 0.6rem;
+        }
+
+        .Neworder_tit_bj {
+            background: url(http://cdn.names.org.cn/website/Content/szname/img/Neworder_tit_libj.png) no-repeat;
+            background-size: 100% 100%;
+            color: #fff;
+        }
+
+        .Neworder_box {
+            width: 100%;
+            overflow: hidden;
+            display: none;
+        }
+
+        .NewNav_p {
+            width: 100%;
+            text-align: center;
+            font-size: 0.3rem;
+            line-height: 0.5rem;
+            background: #fff;
+            color: #b62220;
+            display: none;
+        }
+
+        .NewOrdCon {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+            padding: 0 0.24rem;
+        }
+
+        .NewOrdBjImg {
+            width: 100%;
+            max-width: 750px;
+            height: 4rem;
+            background: url(http://cdn.names.org.cn/website/Content/szname/img/NewOrderBj.png) no-repeat;
+            position: absolute;
+            right: 0;
+            background-size: 100%;
+            opacity: 0.5;
+            z-index: -1;
+        }
+
+        .OrderCon_Ul {
+            width: 100%;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .OrdCon_Name {
+            overflow: hidden;
+            display: inline-block;
+            *display: inline;
+            *zoom: 1;
+            width: auto;
+        }
+
+        .OrdCon_Name li {
+            width: 1rem;
+            height: 2.5rem;
+            margin-right: .5rem;
+            padding-top: 0.5rem;
+            float: left;
+        }
+
+        .OrdCon_Name li p {
+            font-size: 0.32rem;
+            color: #383838;
+            line-height: .5rem;
+            text-align: center;
+            width: 100%;
+        }
+
+        .OrdCon_Name li span {
+            width: 1rem;
+            height: 1rem;
+            background: url(http://cdn.names.org.cn/website/Content/szname/img/NewNameBjk.png) no-repeat;
+            background-size: 100%;
+            font-size: 0.6rem;
+            text-align: center;
+            line-height: 1rem;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .OrdCon_Name li i {
+            width: 100%;
+            line-height: 0.44rem;
+            text-align: center;
+            font-size: 0.24rem;
+            color: #c33936;
+            display: block;
+        }
+
+        .OrdCon_Name li:last-child {
+            margin-right: 0;
+        }
+
+        /*OrdName_Htow*/
+        .OrdName_Htow {
+            width: 100%;
+            height: auto;
+            font-size: 0.36rem;
+            color: #383838;
+            text-align: center;
+            font-weight: normal;
+        }
+
+        .OrdName_Hsan {
+            width: 100%;
+            height: 0.66rem;
+            position: relative;
+            margin: .2rem 0;
+        }
+
+        .OrdName_Hsan span {
+            width: 2.59rem;
+            height: 100%;
+            background: url(http://cdn.names.org.cn/website/Content/szname/img/OrdName_Hsan.png) no-repeat;
+            background-size: 100%;
+            position: absolute;
+            top: 0;
+            left: calc(50% - 1.295rem);
+        }
+
+        .OrdName_Color {
+            color: #b62220;
+        }
+
+        .Ordername_ul {
+            font-size: 0.32rem;
+            color: #383838;
+            text-align: left;
+            padding-bottom: 0.21rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .Ordername_ul li {
+            line-height: 0.52rem;
+        }
+
+        .Ordername_ul_txt {
+            font-size: 0.34rem;
+        }
+
+        .Ordername_ul_txt span {
+            font-size: 0.31rem;
+        }
+
+        /*Ordername_ulCon*/
+        .Ordername_ulCon {
+            width: 100%;
+            overflow: hidden;
+            text-align: left;
+            padding: 0.15rem 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .OrderCon_Ul ul:last-child {
+            border-bottom: 0 !important;
+        }
+
+        .Ordername_ulCon li {
+            font-size: 0.32rem;
+            line-height: 0.56rem;
+        }
+
+        .Ordername_ul_tit {
+            font-size: 0.36rem !important;
+            line-height: .5rem !important;
+        }
+
+        .Ordername_ul_tit i {
+            display: inline-block;
+            width: 1.32rem;
+            height: 0.48rem;
+            background-size: 100%;
+            padding-left: 0.4rem;
+            color: #fff;
+        }
+
+        .ordername_dian {
+            width: 0.12rem;
+            height: 0.12rem;
+            border-radius: 50%;
+            background: #000000;
+            display: inline-block;
+            position: absolute;
+            top: calc(50% - 0.06rem);
+            left: 0;
+        }
+
+        .Ordname_padding {
+            padding-left: 0.3rem;
+            position: relative;
+        }
+
+        .Ordername_An {
+            width: 100%;
+            overflow: hidden;
+            margin: 0.6rem 0 2rem;
+        }
+
+        .Ordername_but,
+        .Ordername_but_re {
+            width: 6rem;
+            height: 1rem;
+            background: url("./img/131.png");
+            color: #fff;
+            font-size: 0.32rem;
+            display: block;
+            margin: 0 auto;
+            background-size: 100% 100%;
+            line-height: 0.9rem;
+            letter-spacing: 0.02rem;
+        }
+
+        .Ordername_AnB {
+            width: 100%;
+            overflow: hidden;
+            margin: 0.6rem 0 2rem;
+            height: 0.64rem;
+        }
+
+        .Ordername_butC {
+            width: 2.49rem;
+            height: 100%;
+            background: #c33936;
+            border-radius: 50px;
+            color: #fff;
+            font-size: 0.32rem;
+            display: block;
+            margin: 0 auto;
+            line-height: 0.64rem;
+        }
+
+        /*OrderNameCon_dl*/
+        .OrderNameCon_dl {
+            width: 100%;
+            overflow: hidden;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+            padding: 0.2rem 0;
+        }
+
+        .OrderNameCon_dl dt {
+            font-size: 0.34rem;
+            font-weight: bold;
+            height: auto;
+        }
+
+        .OrderNameCon_dl dd {
+            font-size: 0.3rem;
+            line-height: 0.5rem;
+            text-indent: 2em;
+        }
+
+        .ordNcon_dl_tit {
+            font-size: 0.34rem !important;
+            height: .6rem !important;
+            margin-top: .4rem;
+        }
+
+        /*OrderSx_ul*/
+        .OrderSx_ul {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .OrderSx_ul .Ordername_ul {
+            min-height: 2.3rem;
+        }
+
+        .ordSx_dl_tit {
+            line-height: 0.45rem;
+            height: 0.45rem;
+            font-size: 0.34rem;
+            font-weight: bold;
+        }
+
+        .OrderSx_zodiac {
+            width: 2.78rem;
+            height: 2.22rem;
+            overflow: hidden;
+            position: absolute;
+            bottom: 0.1rem;
+            right: 0.28rem;
+        }
+
+        .OrderSx_zodiac img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .OrderSx_Con {
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .OrderSx_Con h3 {
+            font-weight: bold;
+            font-size: 0.34rem;
+            text-align: left;
+            line-height: 0.76rem;
+        }
+
+        .OrderSx_Con p {
+            font-size: 0.3rem;
+            text-align: left;
+            line-height: .5rem;
+        }
+
+        .OrdLnian {
+            width: 100%;
+            font-size: 0.3rem;
+            text-align: left;
+        }
+
+        .OrdLnian h3 {
+            font-size: 0.34rem;
+            line-height: 0.78rem;
+        }
+
+        .OrdLnian p {
+            line-height: 0.48rem;
+        }
+
+        .OrdLnian a {
+            display: inline-block;
+            margin-top: 0.66rem;
+            font-size: 0.3rem;
+            text-decoration: underline;
+        }
+
+        .newdeta {
+            width: 100%;
+            font-size: .3rem;
+            overflow: hidden;
+            padding: 0.2rem 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .newdetailed {
+            width: 100%;
+            background: #c09d65;
+        }
+
+        .newdetailed tr td {
+            width: 20%;
+            background: #fff;
+            text-align: center;
+            padding: 0.1rem 0;
+        }
+
+        .newdetailed tr:first-child td {
+            background: #faead1;
+            color: #c43535;
+        }
+
+        .newdetailed tr:nth-child(2) td,
+        .newdetailed tr:nth-child(4) td,
+        .newdetailed tr:nth-child(6) td {
+            background: #fff8ee;
+        }
+
+        .newdetailed tr:nth-child(3) td,
+        .newdetailed tr:nth-child(5) td,
+        .newdetailed tr:nth-child(7) td {
+            background: #FFF;
+        }
+
+        .newdetailed tr td:first-child {
+            background: #faead1;
+            color: #c43535;
+        }
+
+        .Statistics {
+            /*padding:0.2rem;*/
+            padding-top: 0.2rem;
+        }
+
+        .Statistics_bj {
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .wxStatistics {
+            width: 100%;
+            overflow: hidden;
+            margin-top: 0.1rem;
+            padding-bottom: 0.1rem;
+        }
+
+        .Statistics_P {
+            width: 100%;
+            font-size: 0.32rem;
+            line-height: 0.6rem;
+            text-align: left;
+        }
+
+        .wxStatistics li {
+            height: .5rem;
+            font-size: 0.26rem;
+            line-height: 0.5rem;
+            width: 100%;
+            margin-bottom: 0.08rem;
+        }
+
+        .wxStatistics li span {
+            width: .5rem;
+            height: .5rem;
+            background: #f6c700;
+            border-radius: 50%;
+            text-align: center;
+            float: left;
+            margin-right: 0.22rem;
+            -webkit-box-shadow: 1px -2px 1px 1px rgba(0, 0, 0, 0.2) inset;
+            -moz-box-shadow: 1px -2px 1px 1px rgba(0, 0, 0, 0.2) inset;
+            -ms-box-shadow: 1px -2px 1px 1px rgba(0, 0, 0, 0.2) inset;
+            box-shadow: 1px -2px 1px 1px rgba(0, 0, 0, 0.2) inset;
+        }
+
+        .wxStatistics li .wxStatistics_tu {
+            width: 68%;
+            height: 0.28rem;
+            display: block;
+            float: left;
+            background: #e5e5e5;
+            margin: 0.14rem 0.15rem 0 0;
+            border-radius: 20px;
+        }
+
+        .wxStatistics_tu_bj {
+            height: 100%;
+            border-radius: 20px;
+            background: #f6c700;
+            box-shadow: 1px -0.8px 1px 1px rgba(0, 0, 0, 0.2) inset;
+            float: left;
+            position: relative;
+        }
+
+        .wxStatistics_tu_bj em {
+            width: 0.65rem;
+            height: 0.32rem;
+            background: url(http://cdn.names.org.cn/website/Content/szname/img/wxStatistics_tu_bj_01.png) no-repeat;
+            background-size: 100%;
+            display: inline-block;
+            position: absolute;
+            top: -0.03rem;
+            right: -0.25rem;
+        }
+
+        .wxStatistics li i {
+            color: #c0222d;
+            float: right;
+        }
+
+        .wxStatistics li:nth-child(2) span {
+            background: #80c269;
+        }
+
+        .wxStatistics li:nth-child(2) .wxStatistics_tu_bj {
+            background: #80c269;
+        }
+
+        .wxStatistics li:nth-child(2) .wxStatistics_tu_bj em {
+            width: 0.33rem;
+            height: 0.4rem;
+            background: url(http://cdn.names.org.cn/website/Content/szname/img/wxStatistics_tu_bj_02.png) no-repeat;
+            background-size: 100%;
+            display: inline-block;
+            position: absolute;
+            top: -0.08rem;
+            right: 0rem;
+        }
+
+        .wxStatistics li:nth-child(3) span {
+            background: #7ecef4;
+        }
+
+        .wxStatistics li:nth-child(3) .wxStatistics_tu_bj {
+            background: #7ecef4;
+        }
+
+        .wxStatistics li:nth-child(3) .wxStatistics_tu_bj em {
+            width: 0.33rem;
+            height: 0.43rem;
+            background: url(http://cdn.names.org.cn/website/Content/szname/img/wxStatistics_tu_bj_03.png) no-repeat;
+            background-size: 100%;
+            display: inline-block;
+            position: absolute;
+            top: -0.08rem;
+            right: -0.05rem;
+        }
+
+        .wxStatistics li:nth-child(4) span {
+            background: #ec6941;
+        }
+
+        .wxStatistics li:nth-child(4) .wxStatistics_tu_bj {
+            background: #ec6941;
+        }
+
+        .wxStatistics li:nth-child(4) .wxStatistics_tu_bj em {
+            width: 0.33rem;
+            height: 0.43rem;
+            background: url(http://cdn.names.org.cn/website/Content/szname/img/wxStatistics_tu_bj_04.png) no-repeat;
+            background-size: 100%;
+            display: inline-block;
+            position: absolute;
+            top: -0.08rem;
+            right: -0.08rem;
+        }
+
+        .wxStatistics li:nth-child(5) span {
+            background: #81511c;
+        }
+
+        .wxStatistics li:nth-child(5) .wxStatistics_tu_bj {
+            background: #81511c;
+        }
+
+        .wxStatistics li:nth-child(5) .wxStatistics_tu_bj em {
+            width: 0.48rem;
+            height: 0.35rem;
+            background: url(http://cdn.names.org.cn/website/Content/szname/img/wxStatistics_tu_bj_05.png) no-repeat;
+            background-size: 100%;
+            display: inline-block;
+            position: absolute;
+            top: -0.08rem;
+            right: -0.25rem;
+        }
+
+        .OrdNameXys_Txt {
+            width: 100%;
+            line-height: 0.5rem;
+            font-size: 0.3rem;
+            text-indent: 2em;
+            text-align: left;
+        }
+
+        .WxDongTu {
+            width: 100%;
+            height: 6.08rem;
+            float: left;
+            margin-bottom: .3rem;
+        }
+
+        .WxDongTu img {
+            display: block;
+            position: inherit;
+            width: 6.1rem;
+            height: 100%;
+            margin: 0 auto;
+        }
+
+        .OrdXys_con {
+            width: 100%;
+            overflow: hidden;
+            margin-bottom: 0.3rem;
+            transform: scale(0, 0);
+            transition: all 2s;
+            -webkit-transform: scale(0, 0);
+            -moz-transform: scale(0, 0);
+            -o-transform: scale(0, 0);
+            display: none;
+        }
+
+        .OrdXys_con .OrdXys_con_p {
+            width: 100%;
+            font-size: 0.3rem;
+            line-height: 0.5rem;
+            text-align: left;
+        }
+
+        .OrdXys_con .newdetailed {
+            font-size: 0.3rem;
+        }
+
+        .OrdXysConBot {
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .OrdXysConBot_dl {
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .OrdXysConBot_dl dt {
+            width: 2.2rem;
+            height: 2.72rem;
+            float: left;
+        }
+
+        .OrdXysConBot_dl dt img {
+            width: 2.2rem;
+            height: 2.62rem;
+            float: left;
+        }
+
+        .OrdXysConBot_dl dd {
+            font-size: 0.3rem;
+            float: left;
+            text-align: left;
+            width: 65%;
+            padding-left: 0.2rem;
+            letter-spacing: 0.02rem;
+            line-height: 0.45rem;
+        }
+
+        .OrdXysConBot_dl dd strong {
+            font-size: 0.32rem;
+        }
+
+        .OrdXysConBot_p {
+            font-size: 0.3rem;
+            text-align: left;
+            line-height: 0.45rem;
+            text-indent: 2em;
+        }
+
+        .OrdXysConBot_p span {
+            color: #c04442;
+        }
+
+        .li_height {
+            margin-bottom: .1rem;
+        }
+
+        .border_bottom_white {
+            border: 1px solid #fff;
+        }
+
+        .recycle_border {
+            width: 0.4rem;
+            height: 0.4rem;
+            border-radius: 50%;
+            padding: 0.05rem;
+            display: inline-block;
+            border: 1px solid black;
+            margin-right: 0.1rem;
+        }
+
+        .recycle_uck {
+            background-color: white;
+            border-radius: 50%;
+            width: 100%;
+            height: 100%;
+        }
+
+        .recycle_ck {
+            background-color: greenyellow;
+            border-radius: 50%;
+            width: 100%;
+            height: 100%;
+        }
+
+        .enquiries {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+            min-height: 2rem;
+        }
+
+        .enquiries .NewOrdBjImg {
+            top: 0 !important;
+        }
+
+        .enqui_banner {
+            width: 100%;
+            height: 2.89rem;
+            overflow: hidden;
+            background: yellowgreen;
+        }
+
+        .enqui_banner img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .enqui_search {
+            width: 100%;
+            height: 1.48rem;
+            overflow: hidden;
+            padding: 0.3rem 0.75rem;
+            border-bottom: 1px solid #a0a0a0;
+        }
+
+        .enqui_sea_con {
+            width: 100%;
+            height: 100%;
+            border: 1px solid #000;
+            position: relative;
+        }
+
+        .fangdaj {
+            width: 0.9rem;
+            height: 100%;
+            display: block;
+            background: url(http://cdn.names.org.cn/website/Content/szname/img/fangdaj.png) no-repeat 0.33rem 0.26rem #e30e27;
+            position: absolute;
+            right: 0;
+            top: 0;
+            background-size: 0.28rem;
+        }
+
+        .enqui_sea_con input {
+            width: 100%;
+            height: 100%;
+            float: left;
+            padding: 0 0.8rem 0 0.2rem;
+            line-height: 0.58rem;
+            font-size: 0.3rem;
+        }
+
+        .enqui_ul {
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .enqui_ul li {
+            padding: 0.24rem;
+            border-bottom: 2px solid #e5e5e5;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .enqui_ul li .enquiUl_top {
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .enqui_ul li .enquiUl_top h3 {
+            font-size: 0.32rem;
+            font-weight: normal;
+        }
+
+        .enqui_ul li .enquiUl_top p {
+            font-size: 0.28rem;
+            color: #9c9c9c;
+            line-height: 0.4rem;
+        }
+
+        .enquiUl_bot {
+            width: 100%;
+            height: 0.5rem;
+            position: absolute;
+            bottom: 0.18rem;
+            right: 0.24rem;
+        }
+
+        .enquiUl_bot button {
+            width: 2rem;
+            height: 100%;
+            float: right;
+            text-align: center;
+            line-height: 0.5rem;
+            font-size: 0.3rem;
+            color: #fff;
+            border-radius: 3px;
+            border: 1px solid #999999;
+            color: #999999;
+            background: #fff;
+        }
+
+        .enquiUl_bot .chakan {
+            margin-left: 0.25rem;
+            background: #e30e27;
+            border: 0;
+            color: #fff;
+        }
+
+        .pediatric {
+            position: relative;
+            padding: 0;
+            border: 0;
+        }
+
+        .pediatric_p {
+            text-align: center;
+            color: #a42d2e;
+            width: 100%;
+            border: 1px solid #bc9d96;
+            border-bottom: 0;
+            line-height: 0.64rem;
+        }
+
+        .pediatric_tab {
+            background: #bc9d96 !important;
+        }
+
+        .pediatric_tab tr td:nth-child(2),
+        .pediatric_tab tr td:nth-child(4) {
+            background: #fbeae6;
+        }
+
+        .pediatric_tab tr td:nth-child(1),
+        .pediatric_tab tr td:nth-child(3) {
+            background: #fff;
+        }
+
+        .pediatric_bjimg {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 2.26rem;
+            height: 3.81rem;
+            background: url(http://cdn.names.org.cn/website/Content/szname/img/yuandatou.png) no-repeat;
+            background-size: 100%;
+            opacity: 0.3;
+        }
+
+        .pediatric_dl dd em {
+            display: inline-block;
+            width: 0.2rem;
+            height: 0.2rem;
+            border: 1px solid #a42d2e;
+            border-radius: 50%;
+            margin-right: 0.1rem;
+        }
+
+        .pediatric_ban {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .pediatric_ban img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .pediatric_ban_bot {
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .pediatric_ban_bot li {
+            width: 33.33%;
+            height: 0.7rem;
+            font-size: 0.32rem;
+            /*background:url(http://cdn.names.org.cn/website/Content/szname/img/pediatric_ban_botbj.png) no-repeat;background-size:100% 100%;*/
+            text-align: center;
+            line-height: 0.7rem;
+            float: left;
+            /*margin-right:5%;*/
+            color: #b02d2d;
+            position: relative;
+        }
+
+        .pediatric_ban_bot li:before {
+            content: '';
+            width: 0.1rem;
+            height: 0.1rem;
+            border-radius: 50%;
+            background: #b02d2d;
+            position: absolute;
+            top: calc(50% - 0.05rem);
+            right: 0;
+        }
+
+        .pediatric_ban_bot li:last-child {
+            margin-right: 0;
+        }
+
+        .pediatric_ban_bot li:last-child:before {
+            display: none;
+        }
+
+        .pediatric_h3 {
+            width: 100%;
+            font-size: 0.34rem;
+            letter-spacing: 0.02rem;
+            text-align: center;
+            line-height: 0.82rem;
+        }
+
+        .pediatric_but {
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .pediatric_butcon {
+            width: 70%;
+            height: 1.1rem;
+            line-height: 0.9rem;
+            color: #fff;
+            font-size: 0.36rem;
+            text-align: center;
+            background: url(http://cdn.names.org.cn/website/Content/szname/img/pediatric_button.png) no-repeat;
+            background-size: 100% 100%;
+            margin: 0 auto;
+            letter-spacing: 0.02rem;
+        }
+
+        .dsname {
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .dsname .dsname_topimg {
+            width: 100%;
+            height: 7.55rem;
+            overflow: hidden;
+        }
+
+        .dsname .dsname_topimg img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .efficacy {
+            width: 100%;
+            overflow: hidden;
+            padding: 0 0.15rem 0 0.18rem;
+        }
+
+        .efficacy img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .dsname_con {
+            width: 100%;
+            overflow: hidden;
+            padding: 0 0.25rem;
+        }
+
+        .dsname_con .dsSetmeal {
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .dsSet_top {
+            width: 90%;
+            height: 1.1rem;
+            background: #fff;
+            margin: 0 auto;
+            color: #9b0300;
+            font-size: 0.38rem;
+            font-weight: bold;
+            text-align: center;
+            line-height: 1.1rem;
+            border: 4px solid #9b0300;
+            border-radius: 8px 8px 0 0;
+            border-width: 4px 4px 0 4px;
+            position: relative;
+        }
+
+        .dsSet_top span {
+            width: 0.94rem;
+            height: 0.91rem;
+            background: url(http://cdn.names.org.cn/website/Content/szname/img/dsSetmeal_01.png) no-repeat;
+            background-size: 100%;
+            display: block;
+            position: absolute;
+            bottom: 0;
+            right: 20%;
+        }
+
+        .dsSet_ul {
+            width: 100%;
+            overflow: hidden;
+            background: #fffffd;
+            border: 1px solid #bababb;
+            border-radius: 5px;
+        }
+
+        .dsSet_ul li {
+            width: 100%;
+            overflow: hidden;
+            border-bottom: 1px solid #bababb;
+        }
+
+        .dsSet_ul li .dsSet_ul_top {
+            width: 50%;
+            height: 0.68rem;
+            line-height: 0.68rem;
+            text-align: center;
+            font-size: 0.32rem;
+            display: inline-block;
+            float: left;
+            font-weight: bold;
+            color: #472920;
+        }
+
+        .dsSet_lil {
+            width: 26%;
+            height: 2.41rem;
+            float: left;
+            font-size: 0.3rem;
+            text-align: center;
+            line-height: 2.41rem;
+            font-weight: bold;
+            color: #9b0200;
+        }
+
+        .dsSet_lic {
+            width: 49%;
+            height: 2.41rem;
+            float: left;
+            font-size: 0.28rem;
+            padding-top: 0.7rem;
+            color: #232323;
+        }
+
+        .dsSet_lir {
+            width: 25%;
+            height: 2.41rem;
+            float: left;
+            color: #f83d2a;
+            font-size: 0.32rem;
+            font-weight: bold;
+            text-align: center;
+            line-height: 2.41rem;
+        }
+
+        .dsSet_lic p {
+            height: auto;
+            width: 100%;
+            text-align: center;
+        }
+
+        .dsSet_lic_but {
+            width: 100%;
+            height: 0.56rem;
+            line-height: 0.56rem;
+            margin-top: 0.2rem;
+        }
+
+        .dsSet_lic_but button {
+            width: 1.45rem;
+            height: 100%;
+            background: #a02224;
+            color: #fff;
+            font-size: 0.26rem;
+            text-align: center;
+            border-radius: 5px;
+            float: left;
+        }
+
+        .dsSet_liradio {
+            float: left;
+            position: relative;
+            padding-left: 0.45rem;
+            margin-left: 0.2rem;
+        }
+
+        .dsSet_liradio i {
+            display: inline-block;
+            width: 0.36rem;
+            height: 0.36rem;
+            background: url(http://cdn.names.org.cn/website/Content/szname/img/radio_kuang.png) no-repeat;
+            background-size: 1rem;
+            position: absolute;
+            top: calc(50% - 0.18rem);
+            left: 0;
+        }
+
+        .dsSetlibj {
+            background-color: #f8f8f0;
+        }
+
+        .noborder {
+            border: 0 !important;
+        }
+
+        .dsInfo {
+            width: 100%;
+            overflow: hidden;
+            background: #fff;
+            border-radius: 5px;
+            border: 1px solid #c4c4c4;
+        }
+
+        .dsInfo li {
+            width: 100%;
+            overflow: hidden;
+            border-bottom: 1px solid #c4c4c4;
+            line-height: 0.95rem;
+            height: 0.95rem;
+            position: relative;
+        }
+
+        .dsInfo li span {
+            display: inline-block;
+            width: 25.5%;
+            height: 100%;
+            float: left;
+            font-size: 0.32rem;
+            color: #440c0a;
+            float: left;
+            padding-left: 0.2rem;
+        }
+
+        .dsInfo li input {
+            width: 74.5%;
+            height: 100%;
+            float: left;
+            font-size: 0.28rem;
+        }
+
+        .dsInfo li .remark {
+            width: 74.5%;
+            font-size: 0.28rem;
+            padding-top: 0.3rem;
+            line-height: 0.4rem;
+        }
+
+        .dsInfo li.remarkcon {
+            height: 1.85rem !important;
+            border: 0;
+        }
+
+        .dsInfo li em {
+            display: block;
+            width: 0.16rem;
+            height: 0.27rem;
+            background: url(http://cdn.names.org.cn/website/Content/szname/img/member_icon.png) no-repeat 0 -1.23rem;
+            background-size: 1.5rem;
+            position: absolute;
+            top: calc(50% - 0.135rem);
+            right: 0.4rem;
+            transform: rotate(90deg);
+            -webkit-transform: rotate(90deg);
+            -ms-transform: rotate(90deg);
+            -o-transform: rotate(90deg);
+            -moz-transform: rotate(90deg);
+        }
+
+        .urgency {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+            color: #8c0e0e;
+            font-size: 0.28rem;
+            padding-left: 0.66rem;
+            line-height: 0.84rem;
+            text-align: left;
+        }
+
+        .urgency i {
+            display: inline-block;
+            width: 0.36rem;
+            height: 0.36rem;
+            background: url(http://cdn.names.org.cn/website/Content/szname/img/radio_kuang.png) no-repeat;
+            background-size: 1rem;
+            position: absolute;
+            top: calc(50% - 0.18rem);
+            left: 0.2rem;
+        }
+
+        .prompting {
+            width: 100%;
+            height: 0.5rem;
+            font-size: 0.28rem;
+            text-align: left;
+            color: #888888;
+        }
+
+        .prompting span {
+            color: #1a16c8;
+        }
+
+        .dsInfo_but {
+            width: 100%;
+            height: 0.84rem;
+            line-height: 0.84rem;
+            background: #a02224;
+            float: left;
+            color: #fff;
+            text-align: center;
+            font-size: 0.32rem;
+            margin-bottom: 0.4rem;
+            border-radius: 5px;
+        }
+
+        .my_order {
+            font-size: 0.32rem;
+            text-align: right;
+            display: block;
+            float: left;
+            width: 100%;
+            height: 0.55rem;
+        }
+
+        .nameflow {
+            width: 100%;
+            overflow: hidden;
+            background: #f8f8f0;
+            border: 1px solid #d2d2d2;
+            border-radius: 5px;
+            margin-bottom: 0.5rem;
+        }
+
+        .nameflow .nameflowha {
+            font-size: 0.4rem;
+            width: 100%;
+            line-height: 1.08rem;
+            color: #9b0300;
+        }
+
+        .nameflowcon {
+            width: 100%;
+            overflow: hidden;
+            padding: 0 0.5rem 0.3rem;
+            border-bottom: 1px solid #d2d2d2;
+        }
+
+        .nameflowcon dl {
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .nameflowcon dl dt {
+            width: 100%;
+            height: 0.74rem;
+            line-height: 0.74rem;
+            text-align: center;
+            color: #fff;
+            background: #9b0300;
+            font-size: 0.32rem;
+            border-radius: 20px;
+        }
+
+        .nameflowcon dl dd {
+            width: 100%;
+            height: 0.54rem;
+            position: relative;
+        }
+
+        .nameflowcon dl dd em {
+            width: 0.26rem;
+            height: 0.15rem;
+            background: url(http://cdn.names.org.cn/website/Content/szname/img/nameflowcon_jt.png) no-repeat;
+            background-size: 100%;
+            position: absolute;
+            top: calc(50% - 0.075rem);
+            left: calc(50% - 0.13rem);
+        }
+
+        .nameflowhb {
+            width: 100%;
+            overflow: hidden;
+            font-size: 0.3rem;
+            line-height: 0.5rem;
+            color: #44281e;
+            padding: 0.3rem 0 0.2rem;
+        }
+
+        .nameflowhb span {
+            color: #9b0300;
+        }
+
+        .nameflowhb span,
+        .nameflowhb i {
+            text-decoration: underline;
+        }
+
+        .nameflowImg {
+            width: 100%;
+            overflow: hidden;
+            padding: 0 0.25rem;
+            margin-bottom: 0.25rem;
+            position: relative;
+        }
+
+        .nameflowImg img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .nameflowImg span {
+            font-size: 0.26rem;
+            color: #d20f0b;
+            position: absolute;
+            top: 1.7rem;
+            right: 0.5rem;
+            font-weight: bold;
+        }
+
+        .introduce {
+            font-size: 0.38rem;
+            color: #000;
+            padding: 0 0.2rem 0.5rem;
+            text-indent: 2em;
+            text-align: left;
+        }
+
+        .attestation {
+            width: 100%;
+            overflow: hidden;
+            padding: 0 0.45rem 0.3rem;
+        }
+
+        .attestation dt {
+            width: 100%;
+            height: 4.87rem;
+            margin-bottom: 0.23rem;
+        }
+
+        .attestation dt img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .attestation dd {
+            width: 100%;
+            height: 2.37rem;
+            overflow: hidden;
+            margin-bottom: 0.16rem;
+        }
+
+        .attestation dd img {
+            width: 48.5%;
+            display: block;
+            float: left;
+            height: 100%;
+        }
+
+        .attestation dd img:last-child {
+            float: right;
+        }
+
+        .dsfooter {
+            width: 100%;
+            overflow: hidden;
+            font-size: 0.26rem;
+            color: #fff;
+            background: #9b0300;
+            line-height: 0.45rem;
+            padding: 0.6rem 0 0.5rem;
+            margin-bottom: 1.1rem;
+        }
+
+        .fanhui_but {
+            width: 1.03rem;
+            height: .99rem;
+            background: url(http://cdn.names.org.cn/website/Content/szname/img/fanhui_but.png) no-repeat;
+            background-size: 100%;
+            position: fixed;
+            right: 4%;
+            bottom: 20%;
+        }
+
+        /*taocan*/
+        .taocancon,
+        .pay_tc {
+            width: 100%;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.5);
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 99999;
+            display: none;
+        }
+
+        .taocancon .taocancon_box,
+        .pay_tc .taocancon_box {
+            width: 6.5rem;
+            height: 8rem;
+            background: url(http://cdn.names.org.cn/website/Content/szname/img/taocanCon_bj.png) no-repeat;
+            background-size: 100%;
+            position: fixed;
+            top: calc(50% - 3.5rem);
+            left: calc(50% - 3.25rem);
+            border-radius: 5px;
+        }
+
+        .taocancon_box img {
+            display: block;
+            width: 5.74rem;
+            /*height:2.25rem;*/
+            margin: 0.4rem auto 0.2rem;
+        }
+
+        .taocancon_box_no,
+        .pay_tc_box_no {
+            width: 0.7rem;
+            height: 1.12rem;
+            background: url(http://cdn.names.org.cn/website/Content/szname/img/taocanCon_none.png) no-repeat;
+            background-size: 0.7rem;
+            position: absolute;
+            top: -1.1rem;
+            right: 0;
+        }
+
+        .taocancon_box .taocancon_h2 {
+            width: 100%;
+            overflow: hidden;
+            font-size: 0.44rem;
+            text-align: center;
+            font-weight: normal;
+            color: #662d14;
+            height: 0.6rem;
+        }
+
+        .taocancon_p {
+            width: 100%;
+            overflow: hidden;
+            font-size: 0.32rem;
+            text-align: center;
+            margin-bottom: 0.2rem;
+            padding: 0 0.2rem;
+        }
+
+        .taocancon_dl {
+            width: 100%;
+            padding: 0 0.55rem;
+            font-size: 0.28rem;
+            color: #242424;
+            text-align: center;
+            letter-spacing: 0.01rem;
+        }
+
+        .taocancon_dl dt {
+            font-size: 0.32rem;
+            color: #662d14;
+            letter-spacing: 0.03rem;
+        }
+
+        .taocancon_dl dd {
+            margin-bottom: 0.35rem;
+            line-height: 0.4rem;
+            font-size: 0.3rem;
+        }
+
+        #boxgung {
+            overflow: hidden;
+            height: 100%;
+            width: 100%;
+        }
+
+        .xegs_tips {
+            width: 100%;
+            height: 1.3rem;
+            background: url(http://cdn.names.org.cn/website/Content/szname/img/xegx_bjk.png) no-repeat;
+            background-size: 100% 100%;
+            margin: 0.4rem 0;
+            font-size: 0.36rem;
+            font-weight: bold;
+            line-height: 0.5rem;
+            padding-top: 0.15rem;
+            color: #3f4540;
+        }
+
+        .xegs_tips i {
+            color: #a42d2e;
+        }
+
+        .pediatric_h4 {
+            font-size: 0.34rem;
+            margin-bottom: 0.3rem;
+            text-align: left;
+        }
+
+        .pediatric_h4 i {
+            color: #a02224;
+        }
+
+        .weiname_but {
+            width: 100%;
+            height: 0.7rem;
+            margin: 0.3rem 0 0.5rem;
+            padding: 0 0.35rem;
+        }
+
+        .weiname_but span {
+            width: 40%;
+            height: 100%;
+            font-size: 0.32rem;
+            color: #fff;
+            background: #c02525;
+            display: inline-block;
+            float: left;
+            text-align: center;
+            line-height: 0.7rem;
+            letter-spacing: 0.02rem;
+            border-radius: 5px;
+        }
+
+        .weiname_but span.weiname_but_x {
+            float: right;
+        }
+
+        .weiname_but_page {
+            width: 20%;
+            float: left;
+            font-size: 0.32rem;
+            line-height: 0.7rem;
+        }
+
+        .xegs_weiImg {
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .xegs_weiImg img {
+            width: 3.88rem;
+            height: 3.88rem;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .xegs_weiImg p {
+            font-size: 0.3rem;
+            margin: 0.4rem 0;
+            color: #a02224;
+        }
+
+        .xegs_weiImg p i {
+            width: 0.27rem;
+            height: 0.24rem;
+            background: url(http://cdn.names.org.cn/website/Content/szname/img/sanjiao.png) no-repeat;
+            display: inline-block;
+            background-size: 100%;
+            margin-right: 0.1rem;
+        }
+
+        /* --- 2018-1-2 --- */
+        .xe_gs_txt {
+            width: 100%;
+            overflow: hidden;
+            color: #323232;
+            font-size: 0.32rem;
+            text-align: left;
+            margin-bottom: 0.25rem;
+        }
+
+        .xe_gs_txt dt {
+            width: 100%;
+            height: auto;
+            margin-bottom: 0.35rem;
+        }
+
+        .xe_gs_txt dd {
+            width: 100%;
+            overflow: hidden;
+            line-height: 0.45rem;
+        }
+
+        .dsSetmeal {
+            padding: 0 0.25rem;
+        }
+
+        .dsSetmeal .xzContP1 {
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .xz_lsjs_Txt {
+            width: 53%;
+            float: left;
+            font-size: 0.26rem !important;
+            text-align: left;
+        }
+
+        .xz_lsjs_Txt li {
+            line-height: 0.65rem;
+            padding-left: 0.2rem;
+            color: #a02224;
+        }
+
+        .das_txtInfo {
+            width: 100%;
+            overflow: hidden;
+            background: #fff;
+            padding: 0.5rem 0.25rem 0;
+        }
+
+        .xz_lsjs {
+            width: 47%;
+            float: left;
+            overflow: hidden;
+        }
+
+        .pay_tc_info {
+            width: 100%;
+            padding-top: 0.55rem;
+        }
+
+        .pay_ord_num {
+            width: 100%;
+            overflow: hidden;
+            font-size: 0.3rem;
+            text-align: center;
+            color: #6d6d6d;
+        }
+
+        .pay_ord_num span {
+            padding: 0.1rem 0.2rem;
+            background: #fecea6;
+            margin: 0 auto;
+            display: inline-block;
+        }
+
+        .pay_ord_dz {
+            width: 100%;
+            font-size: 0.26rem;
+            color: #6e6c6b;
+            padding: 0 0.2rem;
+            text-align: center;
+            margin: 0.3rem 0;
+        }
+
+        .pay_ord_dz i {
+            font-size: 0.325rem;
+            color: #fc4d33;
+            margin-left: 0.1rem;
+        }
+
+        .pay_ord_dz i em {
+            font-size: 0.6rem;
+            color: #df2105;
+            position: relative;
+        }
+
+        .pay_ord_dz i em:before {
+            content: '';
+            width: 0.85rem;
+            height: 0.26rem;
+            background: url(http://cdn.names.org.cn/website/Content/szname/img/preferential.png) no-repeat;
+            background-size: 100%;
+            display: block;
+            position: absolute;
+            top: -0.2rem;
+            right: -0.8rem;
+        }
+
+        .pay_txt_a {
+            width: 100%;
+            font-size: 0.3rem;
+            color: #6d6d6d;
+            padding: 0 0.38rem;
+            margin-bottom: 0.22rem;
+        }
+
+        .pay_four_but {
+            width: 100%;
+            overflow: hidden;
+            padding: 0 0.3rem;
+        }
+
+        .pay_four_but li {
+            width: 100%;
+            height: 1rem;
+            background: url(http://cdn.names.org.cn/website/Content/szname/img/pay_four_info.png) no-repeat;
+            background-size: 5.88rem;
+            margin-bottom: 0.1rem;
+        }
+
+        .pay_four_but li.pay_four_ali {
+            background-position: 0 -1.41rem;
+        }
+
+        .pay_zz {
+            width: 5.7rem !important;
+            overflow: hidden;
+            text-align: center;
+            margin: 0.1rem auto 0 !important;
+        }
+
+        .pay_zz img {
+            width: 100%;
+            float: left;
+            margin: 0;
+        }
+
+        .pay_zz_txt {
+            width: 100%;
+            text-align: center;
+            font-size: 0.26rem;
+            color: #6d6d6d;
+            margin-top: 0.24rem;
+        }
+
+        .NewNav a {
+            position: absolute;
+            top: 0;
+            right: 0.52rem;
+            font-size: 0.3rem;
+            color: #fff;
+        }
+
+        .NewNav a i {
+            width: 0.33rem;
+            height: 0.31rem;
+            background: url(http://cdn.names.org.cn/website/Content/szname/img/sc_xinxin.png) no-repeat;
+            background-size: 0.33rem;
+            display: inline-block;
+            margin-right: 0.1rem;
+        }
+
+        .ord_name_xx {
+            position: relative;
+        }
+
+        .shouc_xx {
+            width: 0.33rem;
+            height: 0.31rem;
+            background: url(http://cdn.names.org.cn/website/Content/szname/img/sc_xinxin_04.png) no-repeat;
+            background-size: 100%;
+            display: inline-block;
+            margin-right: 0.1rem;
+            padding-top: 0.8rem;
+            position: absolute;
+            top: 0.1rem;
+            right: 0.1rem;
+        }
+
+        .sc_xx_red {
+            background: url(http://cdn.names.org.cn/website/Content/szname/img/sc_xinxin_05.png) no-repeat !important;
+            background-size: 100% !important;
+        }
+
+        /* --- 2018-1-10 --- */
+        .or_se_num {
+            width: 90%;
+            height: 0.76rem;
+            line-height: 0.76rem;
+            border: 1px solid #e30e27;
+            border-radius: 3px;
+            margin: 0 auto;
+        }
+
+        .or_se_num input {
+            width: 100%;
+            height: 100%;
+            float: left;
+            display: block;
+            border-radius: 3px;
+            padding: 0 0.2rem;
+            font-size: 0.28rem;
+            text-align: center;
+        }
+
+        .or_se_num input::-webkit-input-placeholder {
+            color: #b5b5b5;
+        }
+
+        .orse_but {
+            width: 90%;
+            height: 0.78rem;
+            background: #e30e27;
+            text-align: center;
+            line-height: 0.78rem;
+            color: #fff;
+            letter-spacing: 0.02rem;
+            font-size: 0.3rem;
+            margin: 0.28rem auto;
+            border-radius: 3px;
+        }
+    </style>
+
+    <script src="http://cdn.names.org.cn/website/scripts/jquery2.1.3.js"></script>
+    <script src="http://cdn.names.org.cn/website/scripts/pinyin.js?v=2" type="text/javascript"></script>
+    <style type="text/css">
+        .Weinamelist_r span {
+            margin-left: 0.2rem;
+        }
+
+        .Weinamelist_r span:first-child {
+            margin-left: 0;
+        }
+
+        .Weinamelist_r span i {
+            background-position: -0.67rem -0.41rem !important;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="NewOrderNav" style="position:relative">
+        <div class="NewNav">
+            <span onclick="history.go(-1)"></span>我的收藏
+        </div>
+
+    </div>
+    <ul class="Weinamelist" style="padding:0;margin:0 0;" data-val="751d7b3d8759499eaa028c637ebc39fe"></ul>
+    <div class="Ordername_An">
+        <i class="Ordername_but_re Ordername_butGo" style="width:95%;line-height:1rem;text-align: center;"
+            data-box="1">立即查看美名</i>
+    </div>
+    <!--<a class="fanhui_but" href="javascript:;" onclick="history.go(-1)" style="z-index: 999999;bottom: 20%"></a>-->
+    <div class="tzjiazai">
+
+    </div>
+</body>
+<script type="text/javascript">
+    /**
+ * Created by wlq on 2017-12-10.
+ */
+    var dataread = '';
+    var localbbh = 2;
+    localStorage['qm_order'] = '';
+    localStorage['qm_order1'] = '';
+    localStorage['qm_collect'] = '';
+    localStorage['qm_fname'] = '';
+    localStorage['qm_collect1'] = '';
+    localStorage['qm_fname1'] = '';
+    function get_data() {
+        if (localStorage['qm_order' + localbbh] !== undefined && localStorage['qm_order' + localbbh] !== "") {
+            try {
+                dataread = JSON.parse(localStorage['qm_order' + localbbh]);
+                if (typeof dataread == 'object') {
+                    var str_order = '';
+                    for (var i in dataread) {
+                        str_order += (str_order == '' ? dataread[i]['order_id'] : (',' + dataread[i]['order_id']));
+                    }
+                    localStorage['qm_order' + localbbh] = str_order;
+                }
+                dataread = str_order;
+            } catch (error) {
+                dataread = localStorage['qm_order' + localbbh];
+            }
+        }
+    }
+    function set_data(val) {
+        get_data();
+        if (val != undefined && val != "undefined") {
+            if (dataread.indexOf(val) == -1) { dataread += (dataread == '' ? val : (',' + val)); }
+        }
+    }
+    function save_data() {
+        localStorage['qm_order' + localbbh] = dataread;
+    }
+    function del_data(key) {
+        var arr = dataread.split(',');
+        dataread = '';
+        for (var i in arr) {
+            if (key != arr[i]) { dataread += ((dataread ? ',' : '') + arr[i]); }
+        }
+        save_data();
+    }
+
+    var data_result = {};
+    function get_collect(key) {
+        if (localStorage[key + localbbh] !== undefined && localStorage[key + localbbh] !== "") {
+            data_result = JSON.parse(localStorage[key + localbbh]);
+        }
+    }
+    function set_collect(key, k, val, i) {
+        get_collect(i);
+        if (key != undefined && key != "undefined") {
+            if (data_result[key] === undefined) {
+                data_result[key] = {};
+            }
+            data_result[key][k] = val;
+        }
+    }
+    function save_collect(key) {
+        localStorage[key + localbbh] = JSON.stringify(data_result);
+    }
+    function del_collect(key, name, i) {
+        delete data_result[key][name];
+        save_collect(i);
+    }
+</script>
+
+<script type="text/javascript">
+    add_collect();
+    function add_collect() {
+        data_result = {};
+        get_collect('qm_collect');
+        var collece_name = data_result['751d7b3d8759499eaa028c637ebc39fe'];
+        var li_str = '';
+        for (var i in collece_name) {
+            var ana_url = '/name/detail2/751d7b3d8759499eaa028c637ebc39fe?&fname=' + collece_name[i]['fn'] + '&lname=' + collece_name[i]['ln'] + '&iscollect=1';
+            li_str += '<li>' +
+                '<div class="Weinamelist_l">';
+            for (var j in collece_name[i]['data']) {
+                li_str += '<div class="WeinameLl_Con">' +
+                    '<p style="color:#397879" >' + trans(collece_name[i]['data'][j]['jtz']) + '</p>' +
+                    '<span>' + collece_name[i]['data'][j]['jtz'] + '</span>' +
+                    '<i>' + collece_name[i]['data'][j]['wx'] + '</i>' +
+                    '</div>';
+            }
+            li_str += '</div>' +
+                '<div class="Weinamelist_r">' +
+                '<span class="collect"  onclick="collect(this)" data-val="' + i + '" style="margin-right:0.2rem;"><i></i>取消收藏</span>' +
+                '<a href="' + ana_url + '" style="color: #000"><span class="parsing">解析</span></a>' +
+                '</div>' +
+                '</li>';
+        }
+        $('.Weinamelist').html(li_str);
+        if ($('.Weinamelist').find('li').length == 0) {
+            $('.Weinamelist').html('<li style="text-align: center;"><span style="font-size: 0.35rem;color:#397879">您还没有收藏名字哦O(∩_∩)O~</span></li>');
+        }
+    }
+    //收藏五角星
+    function collect(e) {
+        var elm = $(e);
+        var name = elm.data('val');
+        data_result = {};
+        get_collect('qm_collect');
+        del_collect('751d7b3d8759499eaa028c637ebc39fe', name, 'qm_collect');
+        elm.parents('li').remove();
+        if ($('.Weinamelist').find('li').length == 0) {
+            $('.Weinamelist').html('<li style="text-align: center;"><span style="font-size: 0.35rem;color:#397879">您还没有收藏名字哦O(∩_∩)O~</span></li>');
+        }
+    }
+
+    $('.Ordername_butGo').click(function () {
+        window.location.href = "index.html?751d7b3d8759499eaa028c637ebc39fe";
+    })
+</script>
+
+</html>
