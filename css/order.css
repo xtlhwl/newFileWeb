@@ -1362,18 +1362,22 @@ a:visited {
     margin-top: 10px;
 }
 .mien-title{
-    position: absolute;
-    font-size: 0.48rem;
-    font-family: KaiTi;
-    font-weight: 400;
-    margin-top: 10px;
-    margin-left: 2.9rem;
+  font-size: 0.48rem;
+  font-family: KaiTi;
+  font-weight: 400;
+  position: absolute;
+  top: 10px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
 }
 .mien-title span {
     color: #BA3027;
 }
 .mien-bg{
     display: flex;
+    position: relative;
 }
 .mien-bg .mew {
     width: 1rem;
@@ -1387,19 +1391,20 @@ a:visited {
     background-size: 100% 100%;
     width: 3.75rem;
     height: 3rem;
-    margin-left: 2.1rem;
+    position: absolute;
+    right: 0;
 }
 .mien-img-list{
     display: flex;
-    width: 6.78rem;
+    width: 90%;
     flex-wrap: wrap;
     top: -85px;
-    position: relative;
+    /* position: relative; */
     margin: 0 auto;
     justify-content: space-between;
 }
 .mien-img-list img{
-    width: 3.36rem;
+    width: 48%;
 }
 .Ordername_but,
 .Ordername_but_re {
