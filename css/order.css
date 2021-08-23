@@ -5959,7 +5959,7 @@ width: 100%;
 .shove-beauty-btn {
     width: 100%;
     overflow: hidden;
-    padding: 0.45rem 0.2rem 0.2rem 0.26rem;
+    padding: 0.35rem 0.2rem 0.2rem 0.26rem;
     margin: 1rem auto 0;
     max-width: 750px;
 }
@@ -5969,7 +5969,7 @@ width: 100%;
     height: 0.56rem;
     float: left;
     display: inline-block;
-    background: #bfbfbf;
+    background: #bf2525;
     font-size: 0.3rem;
     color: #fff;
     text-align: center;
@@ -6321,6 +6321,7 @@ width: 100%;
 .basic img {
     margin-right: 5px;
     width: 10px;
+    height: 10px;
 }
 .assess-grads{
     display: flex;

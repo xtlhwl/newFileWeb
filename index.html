@@ -547,13 +547,20 @@
             </span>
           </li>
           <li class="oneTimeCs shichen">
-            <p>日<b style="margin-right:0.5rem;"></b>期：</p>
-            <span>
-              <i><input type="date" id="date_input"></i>
-            </span>
+            <div class="input_area">
+              <div id="date_title2" class="left title"> <p>日<b style="margin-right:0.5rem;"></b>期：</p></div>
+              <div style="overflow:hidden">
+                  <input class="input" type="text" readonly="readonly" data-confirm="false" id="birthday2" placeholder="请选择出生时间" style="font-size:13px;    background: none;"
+                         data-toid-date="b_input2" data-toid-hour="h_input2" data-toid-minute="m_input2">
+                  <input type="hidden" name="birthday" id="b_input2">
+                  <input type="hidden" name="hour" id="h_input2">
+                  <input type="hidden" name="hour" id="m_input2">
+              </div>
+          </div>
 
             <div class="xiugaizz" id="RQdata" data-show="0" style=""></div>
           </li>
+
           <li style="display:none">
             <p>字&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;数：</p>
             <span class="zs">
@@ -586,8 +593,197 @@
             onclick="but_info()">确认修改</span></div>
       </div>
     </div>
+    <script src="https://tmhtui.oss-cn-hangzhou.aliyuncs.com/mtui/babyrui-datepicker.js" type="text/javascript"></script>
+<link rel="stylesheet" href="https://tmhtui.oss-cn-hangzhou.aliyuncs.com/mtui/babyrui-datepicker.css" />
+    <script>
+      (new ruiDatepicker).init("#birthday2");
+
+$('.gender').click(function () {
+    $('.gender').removeClass('cur');
+    $(this).addClass('cur');
+    $('#sex').val($(this).data('value'));
+});
+
+$('.gender2').click(function () {
+    $('.gender2').removeClass('cur');
+    $(this).addClass('cur');
+    $('#sex2').val($(this).data('value'));
+});
+
+// $('.state').click(function () {
+//     $('.state').removeClass('cur');
+//     $(this).addClass('cur');
+//     var state = $(this).data('value');
+//     $('#state').val(state);
+//     if (state == 0) {
+//         $('#sex_unknown').show();
+//         $('#date_title').text("预产日期:");
+//         //$('#time_area').hide();
+//         $('#birthday').attr('placeholder', '请选择预产日期');
+
+//         $('.gender').removeClass('cur');
+//         $('#sex_unknown').addClass('cur');
+//         $('#sex').val(-1);
+//     } else {
+//         $('#sex_unknown').hide();
+//         $('#date_title').text("出生时间:");
+//         $('#birthday').attr('placeholder', '请选择出生时间');
+//         //$('#time_area').show();
+
+//         var sex = $('#sex').val();
+//         if (sex < 0) {
+//             $('.gender').removeClass('cur');
+//             $('#sex_male').addClass('cur');
+//             $('#sex').val(1);
+//         }
+//     }
+// });
+
+// $('.state2').click(function () {
+//     $('.state2').removeClass('cur');
+//     $(this).addClass('cur');
+//     var state = $(this).data('value');
+//     $('#state2').val(state);
+//     if (state == 0) {
+//         $('#sex_unknown2').show();
+//         $('#date_title2').text("预产日期:");
+//         //$('#time_area').hide();
+//         $('#birthday2').attr('placeholder', '请选择预产日期');
+
+//         $('.gender2').removeClass('cur');
+//         $('#sex_unknown2').addClass('cur');
+//         $('#sex2').val(-1);
+//     } else {
+//         $('#sex_unknown2').hide();
+//         $('#date_title2').text("出生时间:");
+//         $('#birthday2').attr('placeholder', '请选择出生时间');
+//         //$('#time_area').show();
+
+//         var sex = $('#sex2').val();
+//         if (sex < 0) {
+//             $('.gender2').removeClass('cur');
+//             $('#sex_male2').addClass('cur');
+//             $('#sex2').val(1);
+//         }
+//     }
+// });
+
+// var pattern = /^[\u4e00-\u9fa5]*$/;
+
+// $('#btn_qiming').click(function () {
+//     var name = $('#name').val().trim();
+//     var sex = $('#sex').val();
+//     var state = $('#state').val();
+//     var birth = $('#b_input').val();
+//     //var hour = $("#slt_hour").val();
+//     //var minute = $("#slt_mini").val();
+//     var hour = $("#h_input").val();
+//     var minute = $("#m_input").val();
 
 
+//     if (name == null || name.length == 0 || !pattern.test(name)) {
+//         alert("请输入您的姓氏!(必须是中文)");
+//         return;
+//     }
+
+//     if (name.length > 2) {
+//         alert('请输入您的姓氏!(两个字以下)');
+//         return;
+//     }
+
+//     if (birth == null || birth.length == 0) {
+//         alert("请选择生日期");
+//         return;
+//     }
+
+//     var o = {};
+//     o.sex = sex;
+//     o.birthday = birth;
+//     o.surname = name;
+//     o.hour = (hour == null || hour == '') ? -1 : hour;
+//     o.minute = (minute == null || minute == '') ? -1 : minute;
+//     o.state = state;//出生状态
+
+    // showLoading();
+//     $.ajax({
+//         url: "/mtuiregbaidu?pcode=982",
+//   type: "Post",
+//   data: o,
+//   dataType: "JSON",
+//   async: true,
+//   success: function (d) {
+//     hideLoading();
+//     if (d.code == 0) {
+//         location.href = "/baidu/ss1_2.jsp";
+//     } else {
+//         alert(d.msg);
+//     }
+//   },
+//   error: function () {
+//     hideLoading();
+//     alert("操作异常，请联系客服");
+//   }
+// });
+// });
+// $('.goToOrder').click(function(){
+//     window.location.href='http://hi.tangminghuang.com';
+// })
+// $('#btn_qiming2').click(function () {
+//     var name = $('#name2').val().trim();
+//     var sex = $('#sex2').val();
+//     var state = $('#state2').val();
+//     var birth = $('#b_input2').val();
+//     //var hour = $("#slt_hour").val();
+//     //var minute = $("#slt_mini").val();
+//     var hour = $("#h_input2").val();
+//     var minute = $("#m_input2").val();
+
+//     if (name == null || name.length == 0 || !pattern.test(name)) {
+//         alert("请输入您的姓氏!(必须是中文)");
+//         return;
+//     }
+
+//     if (name.length > 2) {
+//         alert('请输入您的姓氏!(两个字以下)');
+//         return;
+//     }
+
+//     if (birth == null || birth.length == 0) {
+//         alert("请选择生日期");
+//         return;
+//     }
+
+//     var o = {};
+//     o.sex = sex;
+//     o.birthday = birth;
+//     o.surname = name;
+//     o.hour = (hour == null || hour == '') ? -1 : hour;
+//     o.minute = (minute == null || minute == '') ? -1 : minute;
+//     o.state = state;//出生状态
+
+//     showLoading();
+//     $.ajax({
+//         url: "/mtuiregbaidu?pcode=982",
+//         type: "Post",
+//     data: o,
+//     dataType: "JSON",
+//     async: true,
+//     success: function (d) {
+//         hideLoading();
+//         if (d.code == 0) {
+//             location.href = "/baidu/ss1_2.jsp";
+//         } else {
+//             alert(d.msg);
+//         }
+//     },
+//     error: function () {
+//         hideLoading();
+//         alert("操作异常，请联系客服");
+//     }
+// });
+
+// });
+    </script>
     <div class="WeiIndex_box change_nav" style="background:#f7f7f7;" data-box="3">
       <div class="dsname">
 
@@ -1036,7 +1232,7 @@
               } 
             });
           }
-        </script>
+        </script?>
 
         <style>
           .public_pay_popup {
@@ -2232,7 +2428,7 @@
     </div>
     <!-- 推荐美名的引导层结束 -->
     <!--推荐美名的收藏引导层-->
-    <div class="shove-collect" onclick="collectnow()" style="display:none">
+    <!-- <div class="shove-collect" onclick="collectnow()" style="display:none">
       <div class="shove-collect-img">
         <img class="collect-icon" src="//cdn.names.org.cn/website/img/name/order/tips/collect.png" alt="">
         <img class="collect-icon" style="display: none"
@@ -2252,7 +2448,7 @@
             onclick="collectnow()"></button>
         </div>
       </div>
-    </div>
+    </div> -->
     <!--推荐美名的收藏引导层 结束-->
     <script>
       function stopEvt(e) {
@@ -2924,12 +3120,23 @@
       var data_zb2 = $('#re_zbB').val();
       var date_input_date = $('#date_input').val()
 
-      let dateArr = date_input_date.split('-')
-      by = dateArr[0]
-      bm = dateArr[1]
-      bd = dateArr[2]
-      bh = '00'
-      bs = '00'
+      // var sex11 = $('#sex2').val();
+        // var state11 = $('#state2').val();
+        var birth11 = $('#b_input2').val();
+        var hour22 = $("#h_input2").val();
+        var minute33 = $("#m_input2").val();
+        // o.sex = sex11;
+        let dateArr = birth11.split('-');
+        by = dateArr[0]
+        bm = dateArr[1]
+        bd = dateArr[2]
+        // o.surname = name;
+        bh = (hour22 == null || hour22 == '') ? -1 : hour22;
+        bs = (minute33 == null || minute33 == '') ? -1 : minute33;
+        // o.state = state11;//出生状态
+      
+      // bh = '00'
+      // bs = '00'
       bei_type = 0;
       bei_zi = '';
       bei_key = '';
@@ -2943,7 +3150,7 @@
         zibei_fw = 2;
         bei_zi = data_zb2;
       }
-
+     
       if (true) {
         $.ajax({
           url: "http://m.tangminghuang.com/online/modinfo",

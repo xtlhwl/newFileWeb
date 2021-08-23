@@ -10,8 +10,8 @@
 
     <script src="./scripts/jquery2.1.3.js"></script>
     <script src="./scripts/pinyin.js?v=1" type="text/javascript"></script>
-    <link href="//cdn.names.org.cn/website/css/home/zywc.min.css" rel="stylesheet" type="text/css" />
-    <script src="http://cdn.names.org.cn/website/scripts/sm/sm_common.js" type="text/javascript"></script>
+    <link href="./css/zywc.min.css" rel="stylesheet" type="text/css" />
+    <script src="./api/sm_common.js" type="text/javascript"></script>
    
     <link rel="stylesheet" href="./css/layer.css" />
     <script type="text/javascript" src="./scripts/layer.js"></script>
@@ -150,16 +150,18 @@
         </div>
     </div>
     <div class="NewOrder" style="margin-top: 0.9rem;background: #F3EEE2;    ">
-        <div style=" background: #397879;color:#FFF;height: 2.5rem;padding: 0.3rem;">
+        <div style="     background: #397879;
+        color: #FFF;
+        height: 2.5rem;
+        padding: 0.3rem;
+        position: relative;">
             <!-- <img id="btn_pre_name" src="//cdn.names.org.cn/website/img/name/order/name_nav.png" style="position:absolute;width:0.5rem;height:0.49rem;left: -0.8rem;transform: rotateY(180deg);top: calc(54% - 0.245rem);z-index:999" /> -->
-            <div style="    width: 7.02rem;
-            position: absolute;
+            <div style="    position: absolute;
             background: #FFF;
             border-radius: 5px;
-            top: 1.2rem;
             left: 0;
             right: 0;
-            margin: auto;">
+            margin: 0 0.24rem 0.24rem;">
                 <ul class="OrdCon_Name">
                     <li>
                         <p>jiāng</p>
@@ -438,102 +440,113 @@
         }
 
         .weixin_box_con {
-            box-sizing: border-box;
-            width: 80%;
-            overflow: hidden;
-            background: #fff;
-            border-radius: 5px;
-            position: absolute;
-            top: 20%;
-            left: calc(10%);
-            padding: 0 0.66rem;
+          box-sizing: border-box;
+      width: 80%;
+      overflow: hidden;
+      background: #fff;
+      border-radius: 5px;
+      position: absolute;
+      top: 20%;
+      left: calc(10%);
+      padding: 0 0.66rem;
+      background: url(./img/maskpaybg.png) no-repeat;
+      background-size: 100% 100%;
         }
     </style>
-    <script>
+      <script>
         function copyText(con) {
-            const range = document.createRange();
-            range.selectNode(document.getElementById(con));
-            const selection = window.getSelection();
-            if (selection.rangeCount > 0) selection.removeAllRanges();
-            selection.addRange(range);
-            document.execCommand('Copy');
-            layer.msg('复制成功');
+          const range = document.createRange();
+          range.selectNode(document.getElementById(con));
+          const selection = window.getSelection();
+          if (selection.rangeCount > 0) selection.removeAllRanges();
+          selection.addRange(range);
+          document.execCommand('Copy');
+          layer.msg('复制成功');
         }
-    </script>
-    <div id="wechat_pop" class="weixin_box wei_show2" style="display:none;z-index:10000000">
+      </script>
+      <div id="wechat_pop" class="weixin_box wei_show2" style="display:none;z-index:10000000">
         <div class="weixin_box_no" onclick="$('.weixin_box').hide()"></div>
-        <div class="weixin_box_con" style="padding:0 15px;position:relative;width:90%;left: calc(5%);top:15%">
-            <b style="width:21px;height:21px;background:url('//cdn.names.org.cn/website/img/pop_close.png') no-repeat;background-size:100%;display:block;position:absolute;top:10px;right:15px;"
-                onclick="$('.weixin_box').hide()"></b>
-
-            <div style="color:#3cbe0b;display:flex;font-size:17px;margin:20px 0;display:none">
-                <div style="flex:1"></div>
-                <img src="//cdn.names.org.cn/website/img/weixin_duihao.png" style="width:20px;height:20px" />
-                <div style="margin-left:5px">公众号已复制成功</div>
-                <div style="flex:1"></div>
+        <div class="weixin_box_con" style="padding: 0 1.3rem;
+        width: 7rem;
+        padding-bottom: 0.2rem;
+        top: 18%;
+        left: 50%;
+        transform: translate(-50%, 0);
+        background-size: 100% 100%;
+        padding-top: 0.5rem;">
+          <b style="width:21px;height:21px;background:url('//cdn.names.org.cn/website/img/pop_close.png') no-repeat;background-size:100%;display:block;position:absolute;top:10px;right:15px;"
+            onclick="$('.weixin_box').hide()"></b>
+    
+          <div style="color:#3cbe0b;display:flex;font-size:17px;margin:20px 0;display:none">
+            <div style="flex:1"></div>
+            <img src="//cdn.names.org.cn/website/img/weixin_duihao.png" style="width:20px;height:20px" />
+            <div style="margin-left:5px">公众号已复制成功</div>
+            <div style="flex:1"></div>
+          </div>
+    
+          <div style="height:15px"></div>
+          <div style="margin-top: 10px;">
+            <table>
+              <tr>
+                <td>
+                  <div style="display: flex;
+                                flex-flow: column;">
+                    <div style="flex:1"></div>
+                    <img style="width:45px;height:45px" src="./img/avter12.png" />
+                    <img src="./img/maskpagavtar.png" style="width: 45px;height: 45px;position: absolute;">
+                    <div style="flex:1"></div>
+                  </div>
+                </td>
+                <td style="font-size:12px;line-height:20px;padding-left:5px">
+                  <p style="margin-left:10px;color: #BD1C19;">老师每天只接待50个名额<br>关注公众号<span id="tc_box_wei2">微信公众号</span>立即咨询</p>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <div style="height:10px"></div>
+          <div style="display:flex;line-height:26px">
+            <div
+              style="flex:1;border:1px solid #bb1b21;border-top-left-radius:4px;border-bottom-left-radius:5px;text-align:center">
+              <p id="tc_box_wei3" style="color:#bb1b21;text-align:center;font-size:17px">微信公众号</p>
             </div>
-
-            <div style="height:15px"></div>
-            <div>
-                <table>
-                    <tr>
-                        <td>
-                            <div style="display:flex;flex-flow:column">
-                                <div style="flex:1"></div>
-                                <img style="width:50px;height:50px"
-                                    src="//cdn.names.org.cn/website/img/dashi/xtl/head.png" />
-                                <div style="flex:1"></div>
-                            </div>
-                        </td>
-                        <td style="font-size:14px;line-height:20px;padding-left:5px">
-                            <p>老师每天只接待50个名额<br>关注公众号<span id="tc_box_wei2">qm6277</span>立即咨询</p>
-                        </td>
-                    </tr>
-                </table>
+            <div style="width:50px;background-color:#bb1b21;border-top-right-radius:4px;border-bottom-right-radius:4px">
+              <div style="text-align:center;color:white;font-size:15px" onclick="copyText('tc_box_wei3')">复制</div>
+    
+            </div>
+          </div>
+    
+          <p style="font-size:12px;color:red;text-align:center;margin:10px 0;">关注公众号，与姜仲易老师一对一沟通</p>
+    
+          <div style="width:100%;">
+            <div
+              style="width:100%;height:40px;color:white !important;font-size:16px;text-align:center;line-height:40px;border-radius:5px;display:flex"
+              onclick="window.location.href='weixin://'">
+              <img style="width: 90%;margin: 0 auto;" src="./img/wechatbtn.png">
             </div>
             <div style="height:10px"></div>
-            <div style="display:flex;line-height:40px">
-                <div
-                    style="flex:1;border:1px solid #bb1b21;border-top-left-radius:4px;border-bottom-left-radius:5px;text-align:center">
-                    <p id="tc_box_wei3" style="color:#bb1b21;text-align:center;font-size:17px">qm6277</p>
-                </div>
-                <div
-                    style="width:50px;background-color:#bb1b21;border-top-right-radius:4px;border-bottom-right-radius:4px">
-                    <div style="text-align:center;color:white;font-size:15px" onclick="copyText('tc_box_wei3')">复制</div>
-
-                </div>
-            </div>
-
-            <p style="font-size:16px;color:red;text-align:center;margin:10px 0;">关注公众号，与许泰来老师一对一沟通</p>
-
-            <div style="width:100%;">
-                <div style="width:100%;height:40px;background-color:#3a9e13;color:white !important;font-size:16px;text-align:center;line-height:40px;border-radius:5px;display:flex"
-                    onclick="window.location.href='weixin://'">
-                    <div style="flex:1"></div>
-                    <div style="display:flex;flex-direction:column">
-                        <div style="flex:1"></div>
-                        <img src="//cdn.names.org.cn/website/img/weixin_icon.png"
-                            style="height:17px;width:24px;vertical-align:middle;display:block" />
-                        <div style="flex:1"></div>
-                    </div>
-
-                    <div style="margin-left:8px">点击打开微信</div>
-                    <div style="flex:1"></div>
-                </div>
-            </div>
-            <div style="height:10px"></div>
-            <p style="font-size:11px;color:dimgrey;text-align:center;font-style:italic;display:none">打开微信，点右上角“<span
-                    style="color:#3cbe0b">+</span>”，点“<span style="color:#3cbe0b">添加朋友</span>”</p>
-
+            <p style="font-size:11px;color:dimgrey;text-align:center;font-style:italic;display:none">打开微信，点右上角“
+              <span style="color:#3cbe0b">
+                <svg t="1562925077422" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                  p-id="1689" width="16" height="16">
+                  <path
+                    d="M1004.79998 1004.799969c-25.599999 25.599999-63.999998 25.599999-89.599997 0l-198.399994-198.399994c-172.799995 127.999996-409.599987 121.599996-569.599982-25.599999-179.199994-166.399995-191.999994-460.799986-19.199999-639.99998 172.799995-179.199994 460.799986-185.599994 639.99998-6.4 159.999995 159.999995 172.799995 409.599987 38.399999 582.399982l198.399994 198.399994C1030.399979 940.799971 1030.399979 979.199969 1004.79998 1004.799969zM703.999989 262.399992c-127.999996-179.199994-390.399988-179.199994-518.399984 0-83.199997 108.799997-83.199997 268.799992 0 377.599988 127.999996 179.199994 390.399988 179.199994 518.399984 0C787.199987 524.799984 787.199987 371.199988 703.999989 262.399992z"
+                    p-id="1690" fill="#399d12"></path>
+                </svg>
+              </span>”，点“<span style="color:#3cbe0b">公众号</span>”
+            </p>
+    
             <div style="text-align:center;margin-top:0px">
-
-                <img style="width:95%;margin:0 auto;display:block"
-                    src="//cdn.names.org.cn/website/img/name/mp/zx-qm6277.gif" />
+    
+              <img style=" width: 75%;
+                    margin: 0 auto;
+                    display: block;
+                    margin-bottom: 50px;" src="//cdn.names.org.cn/website/img/name/mp/zx-qm6277.gif" />
             </div>
-
+    
             <div style="height:10px"></div>
+          </div>
         </div>
-    </div>
+      </div>
 </body>
 
 <script type="text/javascript" src="http://cdn.names.org.cn/website/Content/szname/js/detail.js"></script>
