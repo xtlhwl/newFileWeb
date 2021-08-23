@@ -340,7 +340,7 @@
 
 .WeinameLl_Con {
     width: 1rem;
-    height: 2.4rem;
+    height: 2.6rem;
     margin-right: .15rem;
     padding-top: 0.15rem;
     float: left;
@@ -4792,7 +4792,7 @@ article {
 }
 
 .maskpay {
-    width: 6.5rem;
+    width: 7rem;
     height: 7.5rem;
     top: 50%;
     max-width: 640px;
@@ -4801,7 +4801,7 @@ article {
     -webkit-transform: translate(-50%, -50%);
     background: url('../img/maskpaybg.png') no-repeat;
     background-size: 100% 100%;
-    padding: 0 1rem;
+    padding: 0 1.1rem;
 }
 
 .ui-cells {
@@ -5626,7 +5626,7 @@ width: 100%;
 }
 .zb_popup .zb_popupCon,
 .zkyp_popupCon {
-    width: 7rem;
+    width: 7.5rem;
     height: 7.5rem;
     max-width: 640px;
     /* background: #fff; */

@@ -62,7 +62,7 @@
     flex-direction: column;
     justify-content: space-evenly;" >
       <!-- <img src="./img/online-refer.png" style="width:30px;height:auto" /> -->
-      <img src="./img/refer.png" style=" width: 17px;margin-top: 15px;">
+      <img src="./img/refer.png" style=" width: 17px;margin-top: 5px;">
       <div style="writing-mode: vertical-lr;color:#397879">在线咨询</div>
     </a>
   </div>
@@ -1125,10 +1125,10 @@ $('.gender2').click(function () {
                 </div>
                 <div>
                   <div>
-                    <a href="javascript:" onclick="buy(1)"><img src="./img/wechatpay.png" style="width:100%" /></a>
+                    <a href="javascript:" onclick="buy(1)"><img src="./img/wechatpay.png" style="width:90%" /></a>
                   </div>
                   <div style="margin-top:10px">
-                    <a href="javascript:" onclick="buy(2)"><img src="./img/alipay.png" style="width:100%" /></a>
+                    <a href="javascript:" onclick="buy(2)"><img src="./img/alipay.png" style="width:90%" /></a>
                   </div>
                 </div>
                 <div style='text-align:center;padding:10px 0;font-size:14px !important'>
@@ -1141,7 +1141,7 @@ $('.gender2').click(function () {
             </div>
           </div>
         </div>
-        <script>
+        <script  type="text/javascript" >
           $('#mask').on('click', '', function (event) {
             console.log('执行')
             $('#mask').hide();
@@ -1153,7 +1153,7 @@ $('.gender2').click(function () {
       // PutNameOrderAct('491dcc6', '201' + cur_tab);
           }
 
-          function buy(t) {
+            function buy(t) {
             var gid = arrgoods[index];
             console.log(arrgoods,gid,index,'111')
             //var price = price;
@@ -1232,7 +1232,7 @@ $('.gender2').click(function () {
               } 
             });
           }
-        </script?>
+        </script>
 
         <style>
           .public_pay_popup {
@@ -1468,8 +1468,8 @@ $('.gender2').click(function () {
                   style="color:#B82F27">见证</span></span></h2>
             <img src="./img/witness.png" style="display:block;width:100%" />
             <ul class="neqA_ul" style="margin-top:15px">
-              <li onclick="ImgShow('#ImgBox','fengcai1.jpg','ImgTopB')">
-                <img src="./img//witness1.png" />
+              <li onclick="ImgShow('#ImgBox','witness1.png','ImgTopB')">
+                <img src="./img/witness1.png" />
                 <p>庚子孟冬姜仲易老师 惠赐墨宝</p>
               </li>
               <li onclick="ImgShow('#ImgBox','IMGL5695.jpg','ImgTopB')">
@@ -1752,7 +1752,11 @@ $('.gender2').click(function () {
         </div>
 
         <div id="btm_fixed" class="ui-cell btn-bottom"
-          style="position:fixed;display:none;width: 7.23rem;left: calc((100% - 7.25rem)/2);bottom: 0.2rem;">
+          style="    position: fixed;
+          width: 90%;
+          left: calc((100% - 90%) / 2);
+          bottom: 0.2rem;
+          display: flex;">
           <div class="btn-bottom-prize" style="display:none">
             <div id="btm_pay_price" style="color:#FE7467;font-size:0.9rem;display:none"></div>
             <div>
@@ -1824,11 +1828,11 @@ $('.gender2').click(function () {
         </script>
 
         <script>
-                    // function flashBtn() {
-                    //     $('.btn-remind').toggleClass("btn_scale");
-                    //     setTimeout(flashBtn, 250);
-                    // }
-                    // setTimeout(flashBtn, 250);
+                    function flashBtn() {
+                        $('.btn-remind').toggleClass("btn_scale");
+                        setTimeout(flashBtn, 250);
+                    }
+                    setTimeout(flashBtn, 250);
         </script>
       </div>
 
@@ -2178,7 +2182,7 @@ $('.gender2').click(function () {
           <img style=" width: 75%;
                 margin: 0 auto;
                 display: block;
-                margin-bottom: 50px;" src="//cdn.names.org.cn/website/img/name/mp/zx-qm6277.gif" />
+                margin-bottom: 50px;" src="./images/od-mzgx114.gif" />
         </div>
 
         <div style="height:10px"></div>
