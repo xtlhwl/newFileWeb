@@ -531,6 +531,15 @@
         <h2 class="info_results_h2">修改资料
           <!-- <em onclick="my_hide()"></em> -->
         </h2>
+        <b style="width: 21px;
+        height: 21px;
+        background: url('./img/关闭@2x.png') no-repeat;
+        background-size: 100%;
+        display: block;
+        position: fixed;
+        bottom: -10px;
+        left: 3.35rem;"
+          onclick="$('.weixin_box').hide()"></b>
         <ul>
           <li>
             <p>姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;氏：</p>
@@ -866,7 +875,7 @@ $('.gender2').click(function () {
                   <td>
                     <div class="master-box">
                       <img style="width: 1.94rem;height: 1.81rem;"
-                        src="./images/video1.png"  onclick="ImgVideo('#ImgBox','m.tangminghuang.com/video/tang_suan.mp4','ImgTopB')"> >
+                        src="./images/video1.png"  onclick="ImgVideo('#ImgBox','m.tangminghuang.com/video/tang_suan.mp4','ImgTopB')"> 
                       <!-- <span>唐名居</span> -->
                       <!-- <div class="top-icon" style="font-size:0;">
                                                 <img src="//cdn.names.org.cn/website/img/dashituan/t_icon_shouxi.png"
@@ -939,23 +948,48 @@ $('.gender2').click(function () {
               <span style="margin-left: -10px;">规模遥遥<span style="color:#B12C23">领先</span></span>
             </div>
             <div style="font-size:0.3rem;line-height:1.5;text-align:justify;color:#555;margin-top:10px">
-              正规国家工商注册，<span style="color: #A03743;font-size: 24px;font-weight: 600;">20余年</span>已为超过<span
-                style="color: #A03743;font-size: 24px;font-weight: 600;">500万用户</span>提供服务，采纳率<span
-                style="color: #387F8F;font-weight: 600;">93.8%</span>，远超行业平均值。其中<span
-                style="color: #387F8F;font-weight: 600;">67%</span>的付费顾客来自口碑推荐。
+              正规国家工商注册，<span style="color: #C01717;font-size: 0.36rem;font-weight: 600;">20余年</span>已为超过<span
+                style="color: #C01717;font-size: 0.36rem;font-weight: 600;">500万用户</span>提供服务，采纳率<span
+                style="color: #387F8F;font-weight: 600;font-size: 0.36rem;">93.8%</span>，远超行业平均值。其中<span
+                style="color: #387F8F;font-weight: 600;font-size: 0.36rem;">67%</span>的付费顾客来自口碑推荐。
             </div>
             <img style="width: 100%;margin-top: 0.38rem;" src="./img/31.png">
-            <span style="font-size: 0.24rem;font-weight: 400;color: #333333;">·2020互联网姓名学杭州论坛特邀嘉宾·</span>
+            <span style="    height: 0.24rem;
+            font-size: 0.24rem;
+            font-family: KaiTi;
+            font-weight: 400;
+            color: #333333;
+            margin-top: 5px;">·2020互联网姓名学杭州论坛特邀嘉宾·</span>
             <div style="display: flex;margin-top:10px;justify-content: space-evenly;">
               <div style="    display: flex;
               flex-direction: column;">
-                <img style="width:3.38rem" src="./img/32.png">
-                <span style="font-size: 0.24rem;font-weight: 400;color: #333333;">·姜仲易老师亲算择名·</span>
+                <img style="width:3.38rem" src="./img/32.png" onclick="ImgVideo('#ImgBox','m.tangminghuang.com/video/jiang_suan.mp4','ImgTopB')">
+                <img src="./img/播放.png"  style="    width: 25px;
+                height: 25px;
+                position: absolute;
+                margin-top: 1.2rem;
+                margin-left: 1.5rem;">
+                <span style="    height: 0.24rem;
+                font-size: 0.24rem;
+                font-family: KaiTi;
+                font-weight: 400;
+                color: #333333;
+                margin-top: 5px;">·姜仲易老师亲算择名·</span>
               </div>
               <div style="    display: flex;
               flex-direction: column;">
-                <img style="width:3.38rem" src="./img/33.png">
-                <span style="font-size: 0.24rem;font-weight: 400;color: #333333;">·唐名居老师亲算择名·</span>
+                <img style="width:3.38rem" src="./img/33.png" onclick="ImgVideo('#ImgBox','m.tangminghuang.com/video/tang_suan.mp4','ImgTopB')">
+                <img src="./img/播放.png"  style="    width: 25px;
+                height: 25px;
+                position: absolute;
+                margin-top: 1.2rem;
+                margin-left: 1.5rem;">
+                <span style="    height: 0.24rem;
+                font-size: 0.24rem;
+                font-family: KaiTi;
+                font-weight: 400;
+                color: #333333;
+                margin-top: 5px;">·唐名居老师亲算择名·</span>
               </div>
             </div>
             <img style="width: 100%;margin-top: 10px;margin-bottom:30px" src="./img/34.png">
@@ -1769,7 +1803,7 @@ $('.gender2').click(function () {
           <div class="ui-cell-primary">
             <a class="btn-remind btn_scale" data-status="1" style="display: flex;justify-content: center;"
               href="javascript:">
-              请老师 <img style="width: 100px;" src="./img/52.png">（名额有限）
+              请老师 <img style="width: 1.5rem;" src="./img/52.png">（名额有限）
             </a>
           </div>
         </div>
@@ -2083,7 +2117,7 @@ $('.gender2').click(function () {
     .weixin_box_con {
       box-sizing: border-box;
       width: 80%;
-      overflow: hidden;
+      /* overflow: hidden; */
       background: #fff;
       border-radius: 5px;
       position: absolute;
@@ -2116,7 +2150,14 @@ $('.gender2').click(function () {
     transform: translate(-50%, 0);
     background-size: 100% 100%;
     padding-top: 0.5rem;">
-      <b style="width:21px;height:21px;background:url('//cdn.names.org.cn/website/img/pop_close.png') no-repeat;background-size:100%;display:block;position:absolute;top:10px;right:15px;"
+      <b style="width: 21px;
+      height: 21px;
+      background: url('./img/关闭@2x.png') no-repeat;
+      background-size: 100%;
+      display: block;
+      position: fixed;
+      bottom: -10px;
+      left: 3.35rem;"
         onclick="$('.weixin_box').hide()"></b>
 
       <div style="color:#3cbe0b;display:flex;font-size:17px;margin:20px 0;display:none">
