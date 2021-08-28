@@ -1406,7 +1406,10 @@ a:visited {
     justify-content: space-between;
 }
 .mien-img-list img{
+
     width: 48%;
+    max-height: 3rem;
+
 }
 .Ordername_but,
 .Ordername_but_re {
@@ -5303,7 +5306,7 @@ width: 100%;
 .btn-bottom div:last-of-type a {
     display: block;
     text-align: center;
-    width: 90%;
+    /* width: 90%; */
     /* border: 1px solid #01AAAF; */
     padding: 10px 0;
     border-radius: 5px;

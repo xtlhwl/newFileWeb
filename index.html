@@ -825,7 +825,7 @@ $('.gender2').click(function () {
                   <td>
                     <div class="master-box">
                       <img style="width: 1.94rem;height: 1.81rem;"
-                        src="./images/video11.png" onclick="ImgVideo('#ImgBox','tmhtui.oss-cn-hangzhou.aliyuncs.com/video/jiang_suan.mp4','ImgTopB')">
+                        src="./images/video11.png" onclick="ImgVideo('#ImgBox','tmhtui.oss-cn-hangzhou.aliyuncs.com/video/jiang_suan.mp4','ImgTopB','cover2.jpg')">
                         <!-- <video style="width: 1.94rem;height: 1.81rem;"   poster="./images/video11.png"  controls >
                           <source src="http://m.tangminghuang.com/video/jiang_suan.mp4" type="video/mp4">
                         </video> -->
@@ -875,7 +875,7 @@ $('.gender2').click(function () {
                   <td>
                     <div class="master-box">
                       <img style="width: 1.94rem;height: 1.81rem;"
-                        src="./images/video1.png"  onclick="ImgVideo('#ImgBox','tmhtui.oss-cn-hangzhou.aliyuncs.com/video/tang_suan.mp4','ImgTopB')"> 
+                        src="./images/video1.png"  onclick="ImgVideo('#ImgBox','tmhtui.oss-cn-hangzhou.aliyuncs.com/video/tang_suan.mp4','ImgTopB','cover3.jpg')"> 
                       <!-- <span>唐名居</span> -->
                       <!-- <div class="top-icon" style="font-size:0;">
                                                 <img src="//cdn.names.org.cn/website/img/dashituan/t_icon_shouxi.png"
@@ -963,7 +963,7 @@ $('.gender2').click(function () {
             <div style="display: flex;margin-top:10px;justify-content: space-evenly;">
               <div style="    display: flex;
               flex-direction: column;">
-                <img style="width:3.38rem" src="./img/32.png" onclick="ImgVideo('#ImgBox','tmhtui.oss-cn-hangzhou.aliyuncs.com/video/jiang_shuo.mp4','ImgTopB')">
+                <img style="width:3.38rem" src="./img/32.png" onclick="ImgVideo('#ImgBox','tmhtui.oss-cn-hangzhou.aliyuncs.com/video/jiang_shuo.mp4','ImgTopB','cover1.jpg')">
                 <img src="./img/播放.png"  style="    width: 25px;
                 height: 25px;
                 position: absolute;
@@ -978,7 +978,7 @@ $('.gender2').click(function () {
               </div>
               <div style="    display: flex;
               flex-direction: column;">
-                <img style="width:3.38rem" src="./img/33.png" onclick="ImgVideo('#ImgBox','tmhtui.oss-cn-hangzhou.aliyuncs.com/video/tang_shuo.mp4','ImgTopB')">
+                <img style="width:3.38rem" src="./img/33.png" onclick="ImgVideo('#ImgBox','tmhtui.oss-cn-hangzhou.aliyuncs.com/video/tang_shuo.mp4','ImgTopB','cover4.jpg')">
                 <img src="./img/播放.png"  style="    width: 25px;
                 height: 25px;
                 position: absolute;
@@ -1803,7 +1803,7 @@ $('.gender2').click(function () {
           <div class="ui-cell-primary">
             <a class="btn-remind btn_scale" data-status="1" style="display: flex;justify-content: center;"
               href="javascript:">
-              请老师 <img style="width: 1.5rem;" src="./img/52.png">（名额有限）
+              请老师 <img style="width: 1.5rem;max-height:50px" src="./img/52.png">（名额有限）
             </a>
           </div>
         </div>
@@ -2762,8 +2762,8 @@ $('.gender2').click(function () {
     $('.ImgBoxTu').addClass(top).html('<span onclick="ImgHide()"></span><img src="./images/' + img + '" />');
     $(t).show();
   }
-  function ImgVideo(t, url, top) {
-    $('.ImgBoxTu').addClass(top).html('<span onclick="ImgHide()"></span><video   style="width:95%" controls src="http://' + url + '" />');
+  function ImgVideo(t, url, top,img) {
+    $('.ImgBoxTu').addClass(top).html('<span onclick="ImgHide()"></span><video   style="width:95%" controls src="http://' + url + '"   poster="./img/'+img +'"  />');
     $(t).show();
   }
   function ImgHide() {
