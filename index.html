@@ -1119,7 +1119,17 @@ $('.gender2').click(function () {
                 display: none;
                 top: 0px;"></div>
         <div class="maskpay" id="maskpay" style="display: none; z-index: 999999;">
+   
           <div class="maskMiddle" style="margin:0 10px; border-radius:6px;padding-top: 20px;">
+            <b style="width: 21px;
+            height: 21px;
+            background: url('./img/关闭@2x.png') no-repeat;
+            background-size: 100%;
+            display: block;
+            position: fixed;
+            bottom: -10px;
+            left: 3.35rem;"
+              onclick="$('.maskpay').hide();$('.mask').hide()"></b>
             <div class="public_tab_item" style="border-radius:6px">
 
               <div style=" margin-top: 10px;
@@ -1765,9 +1775,11 @@ $('.gender2').click(function () {
         </div>
 
         <div class="list-wrap" style="z-index:10000">
-          <div class="pop_bg" style="z-index:10000"></div>
+          <div class="pop_bg" style="z-index:10000;filter: progid:DXImageTransform.Microsoft.gradient(enabled='true', startColorstr='#7F000000', endColorstr='#7F000000');
+          background: rgba(0, 0, 0, 0.5);"></div>
+          
           <div class="list-box" style="z-index:10001">
-            <div id="buy_info" style="border-radius: 0px 0px 0 0;overflow: hidden;margin:0px;background-color: #FFFFFF">
+            <div id="buy_info" style="border-radius: 0px 0px 0 0;overflow: hidden;margin:0px;background-color: #FFFFFF;">
               <div style="    background-color: #397879;
               height: 0.6rem;
               color: #FFFFFF;
@@ -1816,7 +1828,7 @@ $('.gender2').click(function () {
           <div class="ui-cell-primary">
             <a class="btn-remind btn_scale" data-status="1" style="display: flex;justify-content: center;align-items:center"
               href="javascript:">
-              请老师 <img style="width: 1.5rem;max-height:50px" src="./img/52.png">（名额有限）
+              请老师 <img style="width: 2rem;max-height:50px" src="./img/52.png">（名额有限）
             </a>
           </div>
         </div>
@@ -1824,6 +1836,7 @@ $('.gender2').click(function () {
           $(".btn-remind").click(function () {
             $('.pop_bg').show();
             $('.list-box').slideDown();
+            $("#mask1").show();
           });
 
           $('.pop_bg').on('click', function () {
@@ -1863,6 +1876,7 @@ $('.gender2').click(function () {
                 var display = $('.pop_bg').css('display');
                 if (display != 'none') {
                   testBtn.show();
+                 
                   return;
                 }
                 var wt = $(window).scrollTop();

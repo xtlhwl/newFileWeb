@@ -5278,11 +5278,11 @@ width: 100%;
     height: 100%;
     z-index: 99;
     display: none;
-}
+} 
 
 .list-wrap .list-box {
     position: fixed;
-    bottom: 60px;
+    bottom: 70px;
     z-index: 999;
     width: 96%;
     max-height: 240px;
