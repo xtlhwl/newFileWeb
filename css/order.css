@@ -5284,11 +5284,13 @@ width: 100%;
     position: fixed;
     bottom: 60px;
     z-index: 999;
-    width: 100%;
+    width: 96%;
     max-height: 240px;
     overflow-y: scroll;
     display: none;
+    left: 2%;
     color: #696969;
+    background-color: #fff;
 }
 
 .btn-bottom {
