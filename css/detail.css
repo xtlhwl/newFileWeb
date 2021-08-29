@@ -267,6 +267,14 @@ a:visited {
     text-align: center;
     font-weight: normal;
     margin-bottom: 0.2rem;
+    font-size: 0.3rem;
+    font-family: PingFang SC;
+    font-weight: 400;
+    color: #333333;
+    line-height: 0.6rem;
+    position: relative;
+    top: -0.15rem;
+
 }
 
 .OrdName_Hsan {
@@ -288,6 +296,7 @@ a:visited {
 
 .OrdName_Color {
     color: #b62220;
+    font-weight: bold;
 }
 
 .Ordername_ul {

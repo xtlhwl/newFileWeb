@@ -340,7 +340,7 @@
 
 .WeinameLl_Con {
     width: 1rem;
-    height: 2.6rem;
+    height: 2.55rem;
     margin-right: .15rem;
     padding-top: 0.15rem;
     float: left;
@@ -381,7 +381,7 @@
     line-height: 0.4rem;
     text-align: center;
     font-size: 0.24rem;
-    color: #c33936;
+    color: #397879;
     display: block;
     border-radius: 50%;
     border: 1px solid #c33936;
@@ -417,7 +417,7 @@
 .Weinamelist_r .collect i {
     width: 0.33rem;
     height: 0.33rem;
-    background: url(//cdn.names.org.cn/website/Content/szname/img/icon.png) no-repeat 0 -0.41rem;
+    background: url("../img/收藏2x.png") no-repeat 0 -0.41rem;
     background-size: 1rem;
     display: block;
     position: absolute;
@@ -442,7 +442,7 @@
 }
 
 .text-yiyun {
-    width: 100%;
+    /* width: 100%;
     overflow: hidden;
     float: left;
     text-align: left;
@@ -450,7 +450,18 @@
     color: #333;
     line-height: 0.45rem;
     padding: 0.22rem 0.22rem;
+    letter-spacing: 1px; */
+    width: 100%;
+    overflow: hidden;
+    float: left;
+    text-align: left;
+    font-size: 0.24rem;
+    color: #333;
+    line-height: 0.45rem;
+    padding: 0.2rem 0.22rem;
     letter-spacing: 1px;
+    position: relative;
+    top: -0.3rem;
 }
 
 .text-yiyun>span {
