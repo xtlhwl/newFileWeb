@@ -415,18 +415,21 @@
 }
 
 .Weinamelist_r .collect i {
-    width: 0.33rem;
-    height: 0.33rem;
-    background: url("../img/收藏2x.png") no-repeat 0 -0.41rem;
-    background-size: 1rem;
-    display: block;
-    position: absolute;
-    top: -0.15rem;
-    left: calc(50% - 0.165rem);
+  width: 0.33rem;
+  height: 0.33rem;
+  background: url(../img/收藏2x.png) no-repeat 0 0.02rem;
+  background-size: 0.33rem 0.33rem;
+  display: block;
+  position: absolute;
+  top: -0.15rem;
+  left: calc(50% - 0.165rem);
 }
 
 .collectdinw {
-    background-position: -0.67rem -0.41rem !important;
+    /* background-position: -0.67rem -0.41rem !important; */
+    background: url(../img/收藏red.png) no-repeat 0 0.02rem !important;
+
+    background-size: 0.33rem !important;
 }
 
 .Weinamelist_r .parsing:before {
