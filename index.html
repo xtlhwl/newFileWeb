@@ -1185,6 +1185,7 @@ $('.gender2').click(function () {
             </div>
           </div>
         </div>
+        <script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.6.0.js" ></script>
         <script  type="text/javascript" >
           $('#mask').on('click', '', function (event) {
             console.log('执行')
@@ -1196,23 +1197,47 @@ $('.gender2').click(function () {
               $('#wechat_pop').show();
       // PutNameOrderAct('491dcc6', '201' + cur_tab);
           }
+          function _getIsWxClient() {
+             //判断环境:     1小程序,2微信浏览器,3其他浏览器
+             let type = '';
+              let ua = navigator.userAgent.toLowerCase();
+              if (ua.match(/MicroMessenger/i) == "micromessenger") {
+                // wx.miniProgram.getEnv((res) => {
+                //   if (res.miniprogram) {
+                //     type = 1;
+                //   } else {
+                    type = 2;
+                //   }
+                //   resolve(type);
+                // })
+              } else {
+                type = 3
+                type;
+              }   
+              alert(p)
+              return p;
+            
+            }
+            function buy(t) { // t 1 支付宝还是 2微信 
+              //public.js
+           
+          
+            _getIsWxClient()
 
-            function buy(t) {
+
             var gid = arrgoods[index];
             console.log(arrgoods,gid,index,'111')
             //var price = price;
             var urgent = $('.checkbox').hasClass('checked') ? '1' : '0';
-
+            let orderId = window.location.href.split('?')[1]
             showLoading();
             $.ajax({
               url: "http://m.tangminghuang.com/online/getpccodeurl",
               type: "Post",
               data: {
-                orderid: '123123213123123123', 
+                orderid: orderId, 
                 paytype: t, 
                 prodcode: gid, 
-                // goods_id: gid, wechat: "qm6277", urgent: urgent,
-                // swmt: 0, rb68: '0'
               },
               dataType: "JSON",
               async: true,
@@ -1220,7 +1245,7 @@ $('.gender2').click(function () {
                 hideLoading();
 
 
-                if (d.success) {
+                if (d.status == 0) {
                   if (t == 2) {
                     if (0 == 1) {
                       window.location.href = d.data.pay_url;
@@ -1228,7 +1253,7 @@ $('.gender2').click(function () {
                         CheckOrderPay(d.data.guid, d.data.return_url);
                       }, 1000);
                     } else {
-                      popup_wxqrpay(dashi + "起名", price - 0 + (urgent == "1" ? 98 : 0), d.data.pay_url);
+                      popup_wxqrpay(dashi + "起名", price - 0 + (urgent == "1" ? 98 : 0), d.code_url);
                       setTimeout(function () {
                         CheckOrderPay(d.data.guid, d.data.return_url);
                       }, 1000);

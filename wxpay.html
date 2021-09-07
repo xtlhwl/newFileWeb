@@ -1,0 +1,229 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>微信安全支付</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" />
+    <meta http-equiv='x-dns-prefetch-control' content='on'>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <style type="text/css">
+body {
+    padding: 0;
+    margin: 0;
+    background-color: #eeeeee;
+    background-image:none;
+    font-family: '黑体';
+}
+
+.pay-main {
+    padding-top: 10px;
+    padding-left: 20px;
+    padding-bottom: 0px;
+}
+
+    .pay-main img {
+        margin: 0 auto;
+        display: block;
+        height: 180px;
+        margin-bottom: 5px;
+    }
+
+    .pay-main .lines {
+        text-align: center;
+        margin-left: -35px;
+    }
+
+.tips .img {
+    margin: 20px;
+}
+
+    .tips .img img {
+        width: 20px;
+    }
+
+.tips span {
+    vertical-align: top;
+    color: #ababab;
+    line-height: 18px;
+    padding-left: 10px;
+    padding-top: 0px;
+}
+
+.action {
+    background: #4cb131;
+    padding: 10px 0;
+    color: #ffffff;
+    text-align: center;
+    font-size: 14pt;
+    border-radius: 10px 10px;
+    margin: 15px;
+    text-decoration: none;
+    display: block;
+}
+
+.action:focus {
+    background: #4cb131;
+}
+
+.action.disabled {
+    background-color: #aeaeae;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    padding-bottom: 20px;
+    font-size: 10pt;
+    color: #aeaeae;
+}
+
+.footer .ct-if {
+    margin-top: 6px;
+    font-size: 8pt;
+}
+
+
+    </style>
+</head>
+<body>
+    <div style="display:none"><form id="jspay_form" action="https://wx.tenpay.com/cgi-bin/mmpayweb-bin/checkmweb?prepay_id=wx05111443823470c433d71ea2dd706a0000&package=3797021452" method="POST"></form></div>
+    <div id="jspay_c" class="conainer" style="display:none;">
+        <div style="font-family:微软雅黑;font-size:16px;width:260px;box-shadow:0 0 10px 5px rgba(0,0,0,.2);background-color:#FFF;position:absolute;left:50%;top:10%;margin-left:-130px;border:1px solid #ddd;border-radius:6px;">
+            <div style="color:#46B945;text-align: center;line-height:62px;">支付确认</div>
+            <div style="padding:0 10px 10px 25px;margin-bottom: 10px;font-size:14px;line-height:22px;">
+                <ol style="margin:0;padding:0;">
+                    <li>如果您已支付请点击【已支付】查看您的支付结果.</li>
+                    <li>如果您未支付请点击【去支付】完成支付.</li>
+                </ol>
+            </div>
+            <div style="border-top:1px solid #eee;line-height:62px;">
+                <div id="jspay_c_g" style="width:48%;text-align:center;display:inline-block;*display:inline;zoom:1;color:#999;border-right:1px solid #eee;">去支付</div>
+                <div id="jspay_c_c" style="width:48%;text-align:center;display:inline-block;*display:inline;zoom:1;color:#46B945;">已支付</div>
+            </div>
+        </div>
+    </div>
+
+    <div id="jspay_jump" class="conainer" style="display:none;">
+        <div style="font-family:微软雅黑;font-size:16px;width:260px;box-shadow:0 0 10px 5px rgba(0,0,0,.2);background-color:#FFF;position:absolute;left:50%;top:30%;margin-left:-130px;border:1px solid #ddd;border-radius:6px;">
+            <div style="color:#46B945;text-align: center;line-height:62px;">支付确认</div>
+            <div style="padding:0 10px 10px 25px;margin-bottom: 10px;font-size:14px;line-height:22px;">
+                <ol style="margin:0;padding:0;">
+                    <li>正在转向结果页</li>
+                    <li>请不要关闭此页面......</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <div class="conainer">
+        <div class="pay-main">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANYAAADwCAYAAAB8FpoFAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6MTA2QjdBNjI4M0FFMTFFNkI2OUVFMjMwNTI5MzZGRDAiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6MTA2QjdBNjM4M0FFMTFFNkI2OUVFMjMwNTI5MzZGRDAiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDoxMDZCN0E2MDgzQUUxMUU2QjY5RUUyMzA1MjkzNkZEMCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDoxMDZCN0E2MTgzQUUxMUU2QjY5RUUyMzA1MjkzNkZEMCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PiMn998AABp1SURBVHja7J0HmFbV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" />
+        </div>
+        <div class="tips">
+            <div class="img"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACYAAAAmCAMAAACf4xmcAAAAM1BMVEUAAAAGvwQGvwQGvwQGvwQGvwQGvwQGvwQGvwQGvwQGvwQGvwQGvwQGvwQGvwS5ubkGvwRs5GIHAAAAD3RSTlMA0RUIuI7qLnw9DefBsJaiRM9NAAAAeUlEQVQ4y+3USwqAMAxFUVv/9Zf9r1ZnF/pq7UARwTs+EAgk1VZUOasu+9mLrF4HZaoas1aZqqMRllEuwDLKy9A6qSLm3dSfKVhwZl0vKmajGQ4l621xKGU4lDIcKsFwM0oZDqUMh1KGQyUZDqWMhsV/4mQeY/f+3h1H8hfFdsilMgAAAABJRU5ErkJggg==" /><span>已开启支付安全</span></div>
+        </div>
+        <a id="action" class="action">确认支付</a>
+        <div class="footer"><div>支付安全由中国人民财产保险股份有限公司承保</div></div>
+    </div>
+
+    <script>
+        
+        function writeStorage(key, value) {
+            try {
+                if (window.localStorage) {
+                    localStorage.setItem(key, value);
+                } else {
+                    setCookie(key, value);
+                }
+            } catch (e) { }
+        }
+        function getStorage(key) {
+            try {
+                var strStoreData = window.localStorage ? localStorage.getItem(key) : getCookie(key);
+                return strStoreData;
+            } catch (e) { return ''; }
+        }
+        function getCookie(cookiename) {
+            var result;
+            var mycookie = document.cookie;
+            var start2 = mycookie.indexOf(cookiename + "=");
+            if (start2 > -1) {
+                start = mycookie.indexOf("=", start2) + 1;
+                var end = mycookie.indexOf(";", start);
+                if (end == -1) {
+                    end = mycookie.length;
+                }
+                result = unescape(mycookie.substring(start, end));
+            }
+            return result;
+        }
+        function setCookie(cookiename, cookievalue) {
+            document.cookie = cookiename + "=" + cookievalue;
+        }
+    </script>
+    <script type="text/javascript">
+        (function () {
+            var onApiSuccess = function () {
+                setTimeout(showConfirm, 200);
+                top.location.href = 'https://wx.tenpay.com/cgi-bin/mmpayweb-bin/checkmweb?prepay_id=wx05111443823470c433d71ea2dd706a0000&package=3797021452';
+            }
+            var btn = document.getElementById('action');
+            if (document.addEventListener) {
+                btn.addEventListener('click', onApiSuccess, false);
+            } else {
+                btn.attachEvent('onclick', onApiSuccess);
+            }
+        })();
+    </script>
+
+    <script type="text/javascript">
+        var pay_url = "https://wx.tenpay.com/cgi-bin/mmpayweb-bin/checkmweb?prepay_id=wx05111443823470c433d71ea2dd706a0000&package=3797021452";
+        var ret_url = "http://pay.baziqiming.cn/pay/checkorder/408-zixun-21090511144360624365";
+        var prepayId = "868d4679158e94b7e2e4af446d06dd60";
+        var isRecall = prepayId == getStorage('prepay_id');
+
+        var showConfirm = function () {
+            var div = document.getElementById("jspay_c");
+            div.style.display = 'block';
+            var btn = document.getElementById("jspay_c_g");
+            var btn2 = document.getElementById("jspay_c_c");
+            var btnClick = function () {
+                top.location.href = pay_url;
+            }
+            var btnCancel = function () {
+                //document.body.removeChild(div);
+                div.style.display = 'none';
+                var jump = document.getElementById("jspay_jump");
+                jump.style.display = 'block';
+                window.location.replace(ret_url);
+            }
+            if (document.addEventListener) {
+                btn.addEventListener('click', btnClick, false);
+                btn2.addEventListener('click', btnCancel, false);
+            } else {
+                btn.attachEvent('onclick', btnClick);
+                btn2.attachEvent('onclick', btnCancel);
+            }
+        }
+
+        if (isRecall) {
+            showConfirm();
+        } else {
+            setTimeout(showConfirm, 1000);
+            setTimeout(function () {
+                top.location.href = pay_url;
+            }, 100);
+            writeStorage('prepay_id', prepayId);
+        }
+
+    </script>
+    
+</body>
+</html>
